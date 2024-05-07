@@ -3,7 +3,7 @@ from web3.exceptions import TimeExhausted
 import json
 import requests
 import os
-
+import datetime
 
 def polygon_connect_web3(network, apikey):
     if network is None:
@@ -98,7 +98,7 @@ def polygon_NFT_isOwner(web3, mycontract, account):
     confirm_account = web3.to_checksum_address(account)
     role = mycontract.functions.owner().call()
     owner_address = web3.to_checksum_address(role)
-    if confirm_address == owner_address:
+    if confirm_account == owner_address:
         value = True
     else :
         value = False
@@ -124,7 +124,7 @@ def polygon_NFT_change_ownership(web3, mycontract, From, From_pk, To):
     )
     signed_txn = web3.eth.account.sign_transaction(tx, From_pk)
     txHash = web3.eth.send_raw_transaction(signed_txn.rawTransaction)
-    gncHash = polygon_wait_for_transaction_receipt(web3, txHash)
+    gncHash = web3.eth.wait_for_transaction_receipt(txHash)
     after_tx_fee = web3.from_wei(gncHash.effectiveGasPrice * gncHash.gasUsed, 'Ether')
     lst.append(after_tx_fee)
 
@@ -179,7 +179,7 @@ def polygon_NFT_setPauser(web3, mycontract, From, From_pk, To, value=True):
     lst.append(gas_estimate)
     gas_price = web3.eth.gas_price
     lst.append(gas_price)
-    tx = mycontract.functions.setPauser(reciverAddress, value).build_transaction(
+    tx = mycontract.functions.setPauser(To_add, value).build_transaction(
         {
             'from': From_add,
             'nonce': nonce,
@@ -188,7 +188,7 @@ def polygon_NFT_setPauser(web3, mycontract, From, From_pk, To, value=True):
     )
     signed_txn = web3.eth.account.sign_transaction(tx, From_pk)
     txHash = web3.eth.send_raw_transaction(signed_txn.rawTransaction)
-    gncHash = polygon_wait_for_transaction_receipt(web3, txHash)
+    gncHash = web3.eth.wait_for_transaction_receipt(txHash)
     after_tx_fee = web3.from_wei(gncHash.effectiveGasPrice * gncHash.gasUsed, 'Ether')
     lst.append(after_tx_fee)
 
@@ -196,7 +196,7 @@ def polygon_NFT_setPauser(web3, mycontract, From, From_pk, To, value=True):
 
 
 def polygon_NFT_get_imageUrl(tokenuri):
-    with urllib.request.urlopen(tokenuri) as url:
+    with url.request.urlopen(tokenuri) as url:
         s = url.read()
         sdata = json.loads(s)
         imageurl = sdata['image']
@@ -206,7 +206,7 @@ def polygon_NFT_get_imageUrl(tokenuri):
 
 
 def polygon_NFT_snapshot(web3, mycontract):
-    from web3.middleware import geth_poa_middleware
+    from web3.middleware import geth_poa_middleware # type: ignore
     web3.middleware_onion.inject(geth_poa_middleware, layer=0)
     total = polygon_NFT_totalSuply(web3, mycontract)
     owner_list = []
@@ -292,7 +292,7 @@ def polygon_NFT_airdrop_mint(web3, mycontract, From, From_pk, To, ipfsUri):
     )
     signed_txn = web3.eth.account.sign_transaction(tx, sender_pk)
     txHash = web3.eth.send_raw_transaction(signed_txn.rawTransaction)
-    gncHash = polygon_wait_for_transaction_receipt(web3, txHash)
+    gncHash = web3.eth.wait_for_transaction_receipt(txHash)
     after_tx_fee = web3.from_wei(gncHash.effectiveGasPrice * gncHash.gasUsed, 'Ether')
     lst.append(after_tx_fee)
     
@@ -316,11 +316,11 @@ def polygon_burn(web3, mycontract, From, From_pk, token_id):
     )
     signed_txn = web3.eth.account.sign_transaction(tx, From_pk)
     txHash = web3.eth.send_raw_transaction(signed_txn.rawTransaction)
-    gncHash = polygon_wait_for_transaction_receipt(web3, txHash)
+    gncHash = web3.eth.wait_for_transaction_receipt(txHash)
     after_tx_fee = web3.from_wei(gncHash.effectiveGasPrice * gncHash.gasUsed, 'Ether')
     lst.append(after_tx_fee)
     
-    return gnc_dict
+    return lst, gncHash
 
 
 def polygon_NFT_transferFrom(web3, mycontract, From, From_pk, To, token_id):
@@ -341,7 +341,7 @@ def polygon_NFT_transferFrom(web3, mycontract, From, From_pk, To, token_id):
     )
     signed_txn = web3.eth.account.sign_transaction(tx, From_pk)
     txHash = web3.eth.send_raw_transaction(signed_txn.rawTransaction)
-    gncHash = polygon_wait_for_transaction_receipt(web3, txHash)
+    gncHash = web3.eth.wait_for_transaction_receipt(txHash)
     after_tx_fee = web3.from_wei(gncHash.effectiveGasPrice * gncHash.gasUsed, 'Ether')
     lst.append(after_tx_fee)
 
