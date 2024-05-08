@@ -4,12 +4,12 @@ import json
 import requests
 import sys, os
 sys.path.insert(1, '../../../Token_modules/')
-from ERC20_gnc import *
+from ERC721_gnc import *
 from dotenv import load_dotenv
 
 
 if __name__ == "__main__":
-    load_dotenv('/home/whsoo8232/Token-build/Management/.env')
+    load_dotenv('/home/whsoo8232/my-EVM-smartContract/Management/.env')
 
     network = "amoy"
     apikey = os.getenv("INFURA_API_KEY")
@@ -27,5 +27,6 @@ if __name__ == "__main__":
     myContract = polygon_get_contract(web3, nftAddress, nftAbi)
     
     ipfsUri = "https://files.projectcafe.kr/media/ipfs/TestNFT/1.json"
-    token_id = polygon_NFT_totalSuply(web3, myContract) + 1
-    polygon_NFT_mint(web3, myContract, account1, pk1, account1, ipfsUri, token_id)
+    token_id = polygon_NFT_totalSuply(myContract) + 1
+    a,b = polygon_NFT_owner_mint(web3, myContract, account1, pk1, ipfsUri, token_id)
+    print(b)
