@@ -44,8 +44,8 @@ def polygon_get_contract(web3, contractAddress, contractAbi):
 
 def polygon_read_abi(file_name):
     with open(file_name) as f:
-	    info_json = json.load(f)
-
+        info_json = json.load(f)
+     
     return info_json["abi"]
 
 
@@ -239,6 +239,10 @@ def polygon_verify_allowance(web3, mycontract, From, To):
      print(verify)
 
 
+def to_32byte_hex(val):
+  return Web3.to_hex(Web3.to_bytes(val).rjust(32, b'\0'))
+
+
 def polygon_permit_hash(web3, mycontract, token_add, From, From_pk, To, deadline, amount):
     From_add = web3.to_checksum_address(From)
     To_add =  web3.to_checksum_address(To)
@@ -316,11 +320,6 @@ def polygon_permit_hash(web3, mycontract, token_add, From, From_pk, To, deadline
     print(confirm)
     
     return v,r,s
-
-
-def polygon_to_32byte_hex(val):
-  
-    return Web3.to_hex(Web3.to_bytes(val).rjust(32, b'\0'))
 
 
 #def polygon_meta_transaction(web3, mycontract, token_add, From, From_pk, To, To_pk, reciepter, amt, fee, deadline):
