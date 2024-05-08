@@ -4,12 +4,12 @@ import json
 import requests
 import sys, os
 sys.path.insert(1, '../../../Token_modules/')
-from ERC20_gnc import *
+from ERC721_gnc import *
 from dotenv import load_dotenv
 
 
 if __name__ == "__main__":
-    load_dotenv('/home/whsoo8232/Token-build/Management/.env')
+    load_dotenv('/home/whsoo8232/my-EVM-smartContract/Management/.env')
 
     network = "amoy"
     apikey = os.getenv("INFURA_API_KEY")
@@ -19,13 +19,13 @@ if __name__ == "__main__":
     account2 = os.getenv("MY_TESTTEST")
     pk2 = os.getenv("MY_TESTTEST_PK")
 
-
-    tokenAddress = "0x9eD9dBDd506ffD9c2d9A93d679109433E5a0d799"
-    tokenAbi = "./source/myTest1.abi"
+    nftAddress = "0x4BD1366E6cF49dF4Fe7371A593B729822cFa7123"
+    nftAbi = "./source/testamoy020.abi"
 
     web3 = polygon_connect_web3(network, apikey)
 
-    myContract = polygon_get_contract(web3, tokenAddress, tokenAbi)
+    myContract = polygon_get_contract(web3, nftAddress, nftAbi)
     
-    amt = 10000
-    polygon_token_airdrop_mint(web3, myContract, account1, pk1, account2, amt)
+    ipfsUri = "https://files.projectcafe.kr/media/ipfs/TestNFT/1.json"
+    token_id = polygon_NFT_totalSuply(web3, myContract) + 1
+    polygon_NFT_owner_mint(web3, myContract, account1, pk1, ipfsUri, token_id)

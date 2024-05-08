@@ -27,7 +27,7 @@ def polygon_set_logger(python_pgm):
     logFormatter = logging.Formatter(fmt='[%(asctime)s.%(msecs)03d] [%(levelname)-8s] %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 
     # file handler settings
-    logHandler = logging.handlers.TimedRotatingFileHandler(filename=f'/home/whsoo8232/ContractBase/logs/{python_pgm}.log', when='midnight', interval=1, encoding='utf-8')
+    logHandler = logging.handlers.TimedRotatingFileHandler(filename=f'/home/whsoo8232/my-EVM-smartContract/ContractBase/logs/{python_pgm}.log', when='midnight', interval=1, encoding='utf-8')
     logHandler.setFormatter(logFormatter)
 
     #logger set
