@@ -76,19 +76,31 @@ def polygon_get_contract(web3, contractAddress, contractAbi):
     return mycontract
 
 
-def polygon_NFT_totalSuply(web3, mycontract):
+def polygon_NFT_contractName(mycontract):
+     name = mycontract.functions.name().call()
+     
+     return name
+ 
+ 
+def polygon_NFT_contractSymbol(mycontract):
+     symbol = mycontract.functions.name().call()
+     
+     return symbol
+
+
+def polygon_NFT_totalSuply(mycontract):
     total_token = mycontract.functions.totalSupply().call()
 
     return total_token
 
 
-def polygon_NFT_owner(web3, mycontract, token_id):
+def polygon_NFT_owner(mycontract, token_id):
     token_owner = mycontract.functions.ownerOf(token_id).call()
 
     return token_owner
 
 
-def polygon_NFT_uri(web3, mycontract, token_id):
+def polygon_NFT_uri(mycontract, token_id):
     tokenid_uri = mycontract.functions.tokenURI(token_id).call()
 
     return tokenid_uri

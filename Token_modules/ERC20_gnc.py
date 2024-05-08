@@ -56,6 +56,18 @@ def polygon_eth_get_balance(web3, account):
     return balance
 
 
+def polygon_token_contractName(mycontract):
+     name = mycontract.functions.name().call()
+     
+     return name
+ 
+ 
+def polygon_token_contractSymbol(mycontract):
+     symbol = mycontract.functions.name().call()
+     
+     return symbol
+
+
 def polygon_token_get_balance(web3, mycontract, account):
     token_balance = mycontract.functions.balanceOf(account).call()
     
