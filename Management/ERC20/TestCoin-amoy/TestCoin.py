@@ -3,8 +3,8 @@ from web3.exceptions import TimeExhausted
 import json
 import requests
 import sys, os
-sys.path.insert(1, '../../../Token_modules/')
-from ERC20_gnc import *
+sys.path.insert(1, '../../../')
+from Polygon_utils import *
 from dotenv import load_dotenv
 
 
@@ -20,12 +20,12 @@ if __name__ == "__main__":
     pk2 = os.getenv("MY_TESTTEST_PK")
 
 
-    tokenAddress = "0x9eD9dBDd506ffD9c2d9A93d679109433E5a0d799"
-    tokenAbi = "./source/myTest1.abi"
+    tokenAddress = "0x296fA9e97805d42D312D1A0085A6Ca14EC816B79"
+    tokenAbi = "./source/TestCoin.abi"
 
     web3 = polygon_connect_web3(network, apikey)
 
     myContract = polygon_get_contract(web3, tokenAddress, tokenAbi)
     
-    amt = 10000
-    polygon_token_airdrop_mint(web3, myContract, account1, pk1, account2, amt)
+    amt = 10000000
+    polygon_token_mint(web3, myContract, account1, pk1, amt)

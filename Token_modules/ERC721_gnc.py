@@ -253,7 +253,7 @@ def polygon_NFT_snapshot(web3, mycontract):
     return owner_list
 
 
-def polygon_NFT_owner_mint(web3, mycontract, From, From_pk, jsonUri, token_id):
+def polygon_NFT_mint(web3, mycontract, From, From_pk, jsonUri, token_id):
     From_add = web3.to_checksum_address(From)
     nonce = web3.eth.get_transaction_count(From_add)
     lst = []

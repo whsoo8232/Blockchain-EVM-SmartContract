@@ -3,8 +3,8 @@ from web3.exceptions import TimeExhausted
 import json
 import requests
 import sys, os
-sys.path.insert(1, '../../../Token_modules/')
-from ERC721_gnc import *
+sys.path.insert(1, '../../../')
+from Polygon_utils import *
 from dotenv import load_dotenv
 
 
@@ -19,14 +19,16 @@ if __name__ == "__main__":
     account2 = os.getenv("MY_TESTTEST")
     pk2 = os.getenv("MY_TESTTEST_PK")
 
-    nftAddress = "0x33911321910b0F2b9766f59D241ddd88F0D7eFf1"
-    nftAbi = "./source/TestNFT.abi"
+    nftAddress = "0x696AAb91d19b678611103C4c49Fb0088Fd487d14"
+    nftAbi = "./source/VideoNFT.abi"
 
     web3 = polygon_connect_web3(network, apikey)
 
     myContract = polygon_get_contract(web3, nftAddress, nftAbi)
     
-    ipfsUri = "https://files.projectcafe.kr/media/ipfs/TestNFT/1.json"
+    ipfsUri = "ipfs://QmYtyLu7qKjKo6LznfkzfDrWFjnfr4b9bog1e72vXQUDQk/braveKong.json"
     token_id = polygon_NFT_totalSuply(myContract) + 1
-    a,b = polygon_NFT_owner_mint(web3, myContract, account1, pk1, ipfsUri, token_id)
-    print(b)
+    lst, tx_receipt = polygon_NFT_mint(web3, myContract, account1, pk1, ipfsUri, token_id)
+    #polygon_NFT_setMinter(web3, myContract, account1, pk1, account1, value=True)
+    #isMinter = polygon_NFT_isMinter(web3, myContract, account1)
+    #print(isMinter)
