@@ -1,0 +1,42 @@
+[2024-05-09 15:45:44.255] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 15:45:44.257] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 15:52:17.985] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 15:52:17.986] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 16:03:18.225] [ERROR   ] ERC20_deploy.py failed 2  /bin/sh: 2: ./deployContract.sh: 
+: not found
+/bin/sh: 3: cd: can't cd to ../Upgradeable
+/bin/sh: 6: ./deployContract.sh: Syntax error: "elif" unexpected (expecting "then")
+
+[2024-05-09 16:03:18.235] [ERROR   ] ERC20_deploy.py failed 2  /bin/sh: 2: ./deployContract.sh: 
+: not found
+/bin/sh: 3: cd: can't cd to ../Upgradeable
+/bin/sh: 6: ./deployContract.sh: Syntax error: "elif" unexpected (expecting "then")
+
+[2024-05-09 16:04:06.172] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 16:04:06.173] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 16:12:07.703] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 16:12:07.705] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 16:16:02.416] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 16:16:02.417] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 16:25:22.220] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 16:25:22.223] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 16:30:07.450] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 16:30:07.451] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 16:30:29.603] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 16:30:29.604] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+

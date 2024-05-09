@@ -99,7 +99,7 @@ def polygon_deploy_contract(network, infuraKey, etherscanKey, ownerPK, tokenType
     command_exec = subprocess.Popen(["./deployContract.sh clean1"], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     output, error = command_exec.communicate()
     command_exec.wait()
-
+    print("clean1 clear")
     retCode = command_exec.returncode
     if command_exec.returncode == 0:
         logger.debug(output)
@@ -141,7 +141,7 @@ def polygon_deploy_contract(network, infuraKey, etherscanKey, ownerPK, tokenType
     command_exec = subprocess.Popen(["./deployContract.sh deploy1"], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     output, error = command_exec.communicate()
     command_exec.wait()
-
+    print("deploy1 clear")
     retCode = command_exec.returncode
     if command_exec.returncode == 0:
         logger.debug(output)

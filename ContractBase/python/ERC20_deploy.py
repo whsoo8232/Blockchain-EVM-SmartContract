@@ -26,13 +26,13 @@ if __name__ == "__main__":
     infuraKey = os.getenv("INFURA_API_KEY")
     etherscanKey = ""
 
-    ownerPK = os.getenv("PRIVATE_KEY1")
+    ownerPK = "0x119b1e18189153f894f5ccee62a23dac9233df290e159ed6b2d727bad19a142b"
 
 
     tokenType = "ERC20"
-    targetTokenName = "TestPoL"
-    targetSymbolName = "TP"
-    targetAmount = 10000000
+    targetTokenName = "TestCoin"
+    targetSymbolName = "TC"
+    targetAmount = 1000000000000
 
     retCode, retMessage = polygon_deploy_contract(network, infuraKey, etherscanKey, ownerPK, tokenType, targetTokenName, targetSymbolName, targetAmount, logger, python_pgm)
     print(f"retCode=[{retCode}], retMessage=[{retMessage}]")
