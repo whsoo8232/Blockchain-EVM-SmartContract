@@ -15,16 +15,19 @@ import requests
 
 ### Common ###
 def polygon_connect_web3(connect_host, apikey):
-    if connect_host is None:
-        infura_url = "http://localhost:8545"
-    elif connect_host == "polygon":
-        infura_url = "https://polygon-mainnet.infura.io/v3/" + apikey
-    elif connect_host == "amoy":
-        infura_url = "https://rpc-amoy.polygon.technology"
+    # Mainnet #
+    if connect_host == 'ethereum':
+        rpc_url = "none"
+    elif connect_host == 'polygon':
+        rpc_url = "https://polygon-mainnet.infura.io/v3/" + apikey
+    # Testnet #
+    elif connect_host == 'amoy':
+        rpc_url = "https://rpc-amoy.polygon.technology"
     else:
-        infura_url = "http://localhost:8545"
-    web3 = Web3(Web3.HTTPProvider(infura_url))
-
+        return None
+    
+    web3 = Web3(Web3.HTTPProvider(rpc_url))
+    
     return web3
 
 def polygon_get_contract(web3, contractAddress, contractAbi):
