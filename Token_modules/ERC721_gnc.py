@@ -64,7 +64,7 @@ def polygon_metic_transfer(web3, From, From_pk, To, value):
     tx_receipt = web3.eth.wait_for_transaction_receipt(tx_hash)
     after_tx_fee = web3.from_wei(tx_receipt.effectiveGasPrice * tx_receipt.gasUsed, 'Ether')
     lst.append(after_tx_fee)
-
+    print(tx_receipt)
     return lst, tx_receipt
 
 
@@ -121,7 +121,7 @@ def polygon_wait_for_transaction_receipt(web3, txHash):
             if retCnt > 3:
                 gnc_dict = {'error': True, 'transactionHash': txHash}
                 break
-
+    print(tx_receipt)
     return gnc_dict
 
 
@@ -158,7 +158,7 @@ def polygon_NFT_change_ownership(web3, mycontract, From, From_pk, To):
     tx_receipt = web3.eth.wait_for_transaction_receipt(txHash)
     after_tx_fee = web3.from_wei(tx_receipt.effectiveGasPrice * tx_receipt.gasUsed, 'Ether')
     lst.append(after_tx_fee)
-
+    print(tx_receipt)
     return lst, tx_receipt
 
 
@@ -190,7 +190,7 @@ def polygon_NFT_setMinter(web3, mycontract, From, From_pk, To, value=True):
     tx_receipt = web3.eth.wait_for_transaction_receipt(txHash)
     after_tx_fee = web3.from_wei(tx_receipt.effectiveGasPrice * tx_receipt.gasUsed, 'Ether')
     lst.append(after_tx_fee)
-
+    print(tx_receipt)
     return lst, tx_receipt
 
 
@@ -222,7 +222,7 @@ def polygon_NFT_setPauser(web3, mycontract, From, From_pk, To, value=True):
     tx_receipt = web3.eth.wait_for_transaction_receipt(txHash)
     after_tx_fee = web3.from_wei(tx_receipt.effectiveGasPrice * tx_receipt.gasUsed, 'Ether')
     lst.append(after_tx_fee)
-
+    print(tx_receipt)
     return lst, tx_receipt
 
 
@@ -273,7 +273,7 @@ def polygon_NFT_mint(web3, mycontract, From, From_pk, jsonUri, token_id):
     tx_receipt = web3.eth.wait_for_transaction_receipt(txHash)
     after_tx_fee = web3.from_wei(tx_receipt.effectiveGasPrice * tx_receipt.gasUsed, 'Ether')
     lst.append(after_tx_fee)
-
+    print(tx_receipt)
     return lst, tx_receipt
 
 
@@ -299,7 +299,7 @@ def polygon_NFT_airdrop_mint(web3, mycontract, From, From_pk, To, jsonUri):
     tx_receipt = web3.eth.wait_for_transaction_receipt(txHash)
     after_tx_fee = web3.from_wei(tx_receipt.effectiveGasPrice * tx_receipt.gasUsed, 'Ether')
     lst.append(after_tx_fee)
-
+    print(tx_receipt)
     return lst, tx_receipt
 
 #nonce err
@@ -326,7 +326,7 @@ def polygon_NFT_airdrop_mint(web3, mycontract, From, From_pk, To, jsonUri):
     tx_receipt = web3.eth.wait_for_transaction_receipt(txHash)
     after_tx_fee = web3.from_wei(tx_receipt.effectiveGasPrice * tx_receipt.gasUsed, 'Ether')
     lst.append(after_tx_fee)
-    
+    print(tx_receipt)
     return lst, tx_receipt
 
 
@@ -350,7 +350,7 @@ def polygon_burn(web3, mycontract, From, From_pk, token_id):
     tx_receipt = web3.eth.wait_for_transaction_receipt(txHash)
     after_tx_fee = web3.from_wei(tx_receipt.effectiveGasPrice * tx_receipt.gasUsed, 'Ether')
     lst.append(after_tx_fee)
-    
+    print(tx_receipt)
     return lst, tx_receipt
 
 
@@ -375,7 +375,7 @@ def polygon_NFT_transferFrom(web3, mycontract, From, From_pk, To, token_id):
     tx_receipt = web3.eth.wait_for_transaction_receipt(txHash)
     after_tx_fee = web3.from_wei(tx_receipt.effectiveGasPrice * tx_receipt.gasUsed, 'Ether')
     lst.append(after_tx_fee)
-
+    print(tx_receipt)
     return lst, tx_receipt
 
 
@@ -392,7 +392,7 @@ def polygon_NFT_list(web3, mycontract, startBlock, lastblock, token_id=None):
         date = datetime.datetime.fromtimestamp(int(getblock)).strftime('%Y-%m-%d %H:%M:%S')
         tx_data = {'from': tx.args['from'], 'to': tx.args['to'], 'tokenId': tx.args['tokenId'], 'event': tx.event,'transactionHash': tx_hash, 'blockNumber': tx.blockNumber, 'date': date }
         tx_list.append(tx_data)
-
+        
     return tx_list
 
 

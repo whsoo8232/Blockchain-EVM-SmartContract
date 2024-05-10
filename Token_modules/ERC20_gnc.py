@@ -97,7 +97,7 @@ def polygon_wait_for_transaction_receipt(web3, txHash):
             if retCnt > 3:
                 gnc_dict = {'error': True, 'transactionHash': txHash}
                 break
-
+    print(tx_receipt)
     return gnc_dict
 
 
@@ -129,7 +129,7 @@ def polygon_token_approve(web3, mycontract, From, From_pk, To, value):
         lst.append('true')
     else:
         lst.append('false')
-    
+    print(tx_receipt)
     return lst, tx_receipt
 
 
@@ -162,7 +162,7 @@ def polygon_token_mint(web3, mycontract, owner, owner_pk, value):
         lst.append('true')
     else:
         lst.append('false')
-    
+    print(tx_receipt)
     return lst, tx_receipt
 
 
@@ -196,7 +196,7 @@ def polygon_token_airdrop_mint(web3, mycontract, From, From_pk, To, value):
         lst.append('true')
     else:
         lst.append('false')
-
+    print(tx_receipt)
     return lst, tx_receipt
 
 
@@ -228,7 +228,7 @@ def polygon_token_burn(web3, mycontract, owner, owner_pk, value):
         lst.append('true')
     else:
         lst.append('false')
-    
+    print(tx_receipt)
     return lst, tx_receipt
 
 
@@ -261,7 +261,7 @@ def polygon_token_transferFrom(web3, mycontract, From, From_pk, To, value):
         lst.append('true')
     else:
         lst.append('false')
-
+    print(tx_receipt)
     return lst, tx_receipt
 
 
@@ -407,5 +407,5 @@ def polygon_token_change_ownership(web3, mycontract, From, From_pk, To):
     tx_receipt = web3.eth.wait_for_transaction_receipt(txHash)
     after_tx_fee = web3.from_wei(tx_receipt.effectiveGasPrice * tx_receipt.gasUsed, 'Ether')
     lst.append(after_tx_fee)
-
+    print(tx_receipt)
     return lst, tx_receipt

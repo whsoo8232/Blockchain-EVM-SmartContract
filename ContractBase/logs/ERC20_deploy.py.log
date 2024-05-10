@@ -40,3 +40,15 @@
 
 [2024-05-09 16:30:29.604] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
 
+[2024-05-09 17:26:28.794] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 17:26:28.796] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-05-09 17:44:08.848] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: bin/sh: not found
+
+[2024-05-09 17:44:08.850] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: bin/sh: not found
+
+[2024-05-09 17:44:38.181] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: bin/sh: not found
+
+[2024-05-09 17:44:38.216] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: deployContract.sh: not found
+
