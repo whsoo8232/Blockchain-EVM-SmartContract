@@ -189,3 +189,43 @@ Deploying testDeploy...
 testDeploy deployed address to: 0x662fC8e40E3B1B998F7bd0aE6055159eDF7BEA05
 Done in 37.55s.
 
+[2024-05-10 15:25:54.613] [DEBUG   ] yarn run v1.22.21
+$ npx hardhat clean;rm -rf .env .openzeppelin cache contracts/* scripts/*
+Done in 0.81s.
+
+[2024-05-10 15:25:55.237] [ERROR   ] ERC20_deploy.py failed 1 yarn run v1.22.21
+$ npx hardhat run scripts/deployv1.js
+
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+ ParserError: Expected '{' but got '-'
+  --> contracts/testDeploy-linux.sol:11:20:
+   |
+11 | contract testDeploy-linux is Initializable, ERC20Upgrad ...
+   |                    ^
+
+
+Error HH600: Compilation failed
+HardhatError: HH600: Compilation failed
+    at SimpleTaskDefinition.action (/home/whsoo8232/my-EVM-smartContract/ContractBase/Upgradeable/node_modules/hardhat/src/builtin-tasks/compile.ts:499:15)
+    at Environment._runTaskDefinition (/home/whsoo8232/my-EVM-smartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/runtime-environment.ts:359:14)
+    at OverriddenTaskDefinition._action (/home/whsoo8232/my-EVM-smartContract/ContractBase/Upgradeable/node_modules/@typechain/hardhat/src/index.ts:28:30)
+    at Environment._runTaskDefinition (/home/whsoo8232/my-EVM-smartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/runtime-environment.ts:359:14)
+    at Environment.run (/home/whsoo8232/my-EVM-smartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/runtime-environment.ts:192:14)
+    at SimpleTaskDefinition.action (/home/whsoo8232/my-EVM-smartContract/ContractBase/Upgradeable/node_modules/hardhat/src/builtin-tasks/compile.ts:1424:63)
+    at Environment._runTaskDefinition (/home/whsoo8232/my-EVM-smartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/runtime-environment.ts:359:14)
+    at Environment._runTaskDefinition (/home/whsoo8232/my-EVM-smartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/runtime-environment.ts:359:14)
+    at Environment.run (/home/whsoo8232/my-EVM-smartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/runtime-environment.ts:192:14)
+    at SimpleTaskDefinition.action (/home/whsoo8232/my-EVM-smartContract/ContractBase/Upgradeable/node_modules/hardhat/src/builtin-tasks/compile.ts:1504:7)
+error Command failed with exit code 1.
+
+[2024-05-10 15:26:35.806] [DEBUG   ] yarn run v1.22.21
+$ npx hardhat clean;rm -rf .env .openzeppelin cache contracts/* scripts/*
+Done in 0.79s.
+
+[2024-05-10 15:27:07.962] [DEBUG   ] yarn run v1.22.21
+$ npx hardhat run scripts/deployv1.js
+Compiled 20 Solidity files successfully (evm target: paris).
+Deploying testDeployLinux...
+testDeployLinux deployed address to: 0x8271DA68440983c69dF670ED46797eD856cB30e2
+Done in 32.07s.
+
