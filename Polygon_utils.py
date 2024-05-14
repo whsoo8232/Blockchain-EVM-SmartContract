@@ -4,6 +4,7 @@ from web3.exceptions import TimeExhausted
 import json
 import os
 import datetime
+import requests
 #ERC20
 from eth_account.messages import encode_defunct, encode_structured_data, defunct_hash_message
 import urllib
@@ -11,18 +12,19 @@ import time
 import hashlib
 import struct
 # ERC721
-import requests
 
 ### Common ###
-def polygon_connect_web3(connect_host, apikey):
+def polygon_connect_web3(connect_host, apikey): #test done
     # Mainnet #
     if connect_host == 'ethereum':
-        rpc_url = "none"
+        rpc_url = "https://mainnet.infura.io/v3/" + apikey
     elif connect_host == 'polygon':
         rpc_url = "https://polygon-mainnet.infura.io/v3/" + apikey
     # Testnet #
+    elif connect_host == 'sepolia':
+        rpc_url = "https://sepolia.infura.io/v3/" + apikey
     elif connect_host == 'amoy':
-        rpc_url = "https://rpc-amoy.polygon.technology"
+        rpc_url = "https://polygon-amoy.infura.io/v3/" + apikey
     else:
         return None
     
@@ -30,7 +32,7 @@ def polygon_connect_web3(connect_host, apikey):
     
     return web3
 
-def polygon_get_contract(web3, contractAddress, contractAbi):
+def polygon_get_contract(web3, contractAddress, contractAbi): #test done
     file = open(contractAbi, 'r', encoding='utf-8')
     contractaddress = web3.to_checksum_address(contractAddress)
     mycontract = web3.eth.contract(abi=file.read(), address=contractaddress)
@@ -53,37 +55,58 @@ def polygon_gasPrice(priceType=None):
     else:
         return res['result']['average']
 
-def polygon_eth_getbalance(web3, account):
+def polygon_eth_getbalance(web3, account): #test done
     account = web3.to_checksum_address(account)
     balance = web3.from_wei(web3.eth.get_balance(account), 'ether')
 
     return balance
 
-def polygon_metic_transfer(web3, From, From_pk, To, value):
-    From_add = web3.toChecksumAddress(From)
-    To_add = web3.toChecksumAddress(To)
+def polygon_eth_transfer(web3, From, From_pk, To, value): #test done
+    From_add = web3.to_checksum_address(From)
+    To_add = web3.to_checksum_address(To)
     nonce = web3.eth.get_transaction_count(From_add)
     lst = []
-    gas_estimate = web3.eth.estimateGas({'from': From_add, 'to': To_add, 'value': web3.toWei(value, "ether")})
+    gas_estimate = web3.eth.estimate_gas({'from': From_add, 'to': To_add, 'value': web3.to_wei(value, "ether")})
     lst.append(gas_estimate)
     gas_price = web3.eth.gas_price
     lst.append(gas_price)
     tx = {
             'nonce': nonce,
+            'from': From_add,
             'to': To_add,
-            'value': web3.toWei(value, 'ether'),
+            'value': web3.to_wei(value, 'ether'),
             'gas': gas_estimate,
-            "gasPrice": web3.toWei(gas_price , 'gwei'),
+            "gasPrice": gas_price
         }
-    sign_tx = web3.eth.account.signTransaction(tx,From_pk)
-    tx_hash = web3.eth.sendRawTransaction(sign_tx.rawTransaction)
+    sign_tx = web3.eth.account.sign_transaction(tx,From_pk)
+    tx_hash = web3.eth.send_raw_transaction(sign_tx.rawTransaction)
     tx_receipt = web3.eth.wait_for_transaction_receipt(tx_hash)
     after_tx_fee = web3.from_wei(tx_receipt.effectiveGasPrice * tx_receipt.gasUsed, 'Ether')
     lst.append(after_tx_fee)
 
     return lst, tx_receipt
 
-def polygon_wait_for_transaction_receipt(web3, txHash):
+#ethereum block generation delay : 12sec
+def polygon_tx_list(web3,address):
+    import pickle
+    tx_dictionary = {}
+    endBlock = web3.eth.block_number
+    startBlock = endBlock - 1
+    print(f"Started filtering through block number {startBlock} to {endBlock} for transactions")
+    for x in range(startBlock, endBlock):
+        block = web3.eth.get_block(x, True)
+        for transaction in block.transactions:
+            if transaction['to'] == address or transaction['from'] == address:
+                with open("transactions.pkl", "wb") as f:
+                    hashStr = transaction['hash'].hex()
+                    tx_dictionary[hashStr] = transaction
+                    pickle.dump(tx_dictionary, f)
+                f.close()
+    print(f"Finished searching blocks {startBlock} through {endBlock} and found {len(tx_dictionary)} transactions")
+    
+    return tx_dictionary
+
+def polygon_wait_for_tx_receipt(web3, txHash):
     gnc_dict = {}
     retCnt = 0
     while True:
@@ -330,30 +353,29 @@ def polygon_NFT_list(web3, mycontract, startBlock, lastblock, token_id=None):
 
 
 ### ERC20 ###
-def polygon_token_contractName(mycontract):
+def polygon_token_contractName(mycontract): #test done
      name = mycontract.functions.name().call()
      
      return name
  
-def polygon_token_contractSymbol(mycontract):
+def polygon_token_contractSymbol(mycontract): #test done
      symbol = mycontract.functions.name().call()
      
      return symbol
 
-def polygon_eth_get_balance(web3, account):
+def polygon_metic_get_balance(web3, account): #test done
     account = web3.to_checksum_address(account)
     balance = web3.from_wei(web3.eth.get_balance(account), 'ether')
 	
     return balance
 
-def polygon_token_get_balance(mycontract, account):
+def polygon_token_get_balance(mycontract, account): #test done
     token_balance = mycontract.functions.balanceOf(account).call()
     
     return token_balance
 
-def polygon_token_totalSuply(mycontract):
+def polygon_token_totalSuply(mycontract): #test done
     total_token = mycontract.functions.totalSupply().call()
-    print(total_token)
     
     return total_token
 
@@ -363,12 +385,9 @@ def polygon_token_approve(web3, mycontract, From, From_pk, To, value):
     nonce = web3.eth.get_transaction_count(From_add)
     gas_estimate = mycontract.functions.approve(To_add,value).estimate_gas({'from': From_add})
     lst = []
-    print(gas_estimate)
     gas_price = web3.eth.gas_price
-    print(gas_price)
     before_tx_fee = web3.from_wei(gas_estimate * gas_price, 'Ether')
     lst.append(before_tx_fee)
-    print(before_tx_fee)
     tx = mycontract.functions.approve(To_add,value).build_transaction(
         {
             'from': From_add,
@@ -487,12 +506,9 @@ def polygon_token_transferFrom(web3, mycontract, From, From_pk, To, value):
     nonce = web3.eth.get_transaction_count(From_add)
     gas_estimate = mycontract.functions.transfer(To_add,amount).estimate_gas({'from': From_add})
     lst = []
-    print(gas_estimate)
     gas_price = web3.eth.gas_price
-    print(gas_price)
     before_tx_fee = web3.from_wei(gas_estimate * gas_price, 'Ether')
     lst.append(before_tx_fee)
-    print(before_tx_fee)
     tx = mycontract.functions.transfer(To_add,amount).build_transaction(
         {
             'from': From_add,
@@ -621,3 +637,11 @@ def polygon_token_change_ownership(web3, mycontract, From, From_pk, To):
     lst.append(after_tx_fee)
     print(tx_receipt)
     return lst, tx_receipt
+
+
+def polygon_token_tx_list(mycontract, address, startBlock, endBlock):
+    etherscanApi = "https://api.polygonscan.com/api?module=account&action=tokentx&contractaddress=" + str(mycontract.address) + "&address=" + str(address) + "&startblock=" + str(startBlock) + "&endblock=" + str(endBlock) + "&page=1&offset=5&sort=asc&apikey=BRB7ZWGGJWUGGY6YRP68RAU4NGPTVH1GB2"
+    req = requests.get(etherscanApi)
+    tx_list = req.json()
+    
+    return tx_list
