@@ -86,6 +86,18 @@ def polygon_eth_transfer(web3, From, From_pk, To, value): #test done
 
     return lst, tx_receipt
 
+#api docs from "https://docs.cloud.coinbase.com/sign-in-with-coinbase/docs/api-prices"
+#coin&currency require SYMBOL
+def polygon_coin_spot_price(coin, currency):
+    from coinbase.wallet.client import Client
+    api_key = "organizations/1d87c8de-839b-4ef5-b73a-d6dca9bc9988/apiKeys/23fe4062-96b9-438c-b14f-e4b088fa8417"
+    api_secret = "-----BEGIN EC PRIVATE KEY-----\nMHcCAQEEINMjhjFpmI1H+BJ4Vrq51mwomQtiZuaVLOV9jrsmYA++oAoGCCqGSM49\nAwEHoUQDQgAE/erXjwh+7HVnEdL4RjHb3Au6iCORFxA3SqvJDG6EpDxFDEtqtUtr\nWxl2NmPUaFK10tuPb6gvodjDZswH5aJKBw==\n-----END EC PRIVATE KEY-----\n"
+    client = Client(api_key, api_secret)
+    coinPair = coin + "-" + currency
+    price = client.get_spot_price(currency_pair = coinPair)
+    
+    return price #return Dict
+
 #ethereum block generation delay : 12sec
 def polygon_tx_list(web3,address):
     import pickle
