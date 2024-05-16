@@ -9,7 +9,7 @@ if __name__ == "__main__":
     ### common set ####
     load_dotenv('./Management/.env')
 
-    network = "polygon"
+    network = "sepolia"
     apikey = os.getenv("INFURA_API_KEY")
 
     account1 = os.getenv("MY_TESTMAIN")
@@ -26,15 +26,7 @@ if __name__ == "__main__":
     
     
     ### scripts ###
-    coin = "ETH"
-    currency = "USD"
-    coinPrice = polygon_coin_spot_price(coin, currency)
-    print(coinPrice)
-    
-    #startBlock = 0
-    #endBlock = web3.eth.block_number
-    #polygon_token_tx_list(web3, myContract, account1, startBlock, endBlock)
-    
+    polygon_tx_list2(web3)
     #amt = 0.001
     #lst,tx_receipt = polygon_eth_transfer(web3, account1, pk1, account2, amt)
     #print(tx_receipt)
