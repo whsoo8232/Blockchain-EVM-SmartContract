@@ -30,8 +30,8 @@ if __name__ == "__main__":
 
 
     tokenType = "ERC20"
-    targetTokenName = "testDeployLinux"
-    targetSymbolName = "testDeployLinux"
+    targetTokenName = "sdsdvsdv"
+    targetSymbolName = "sbdb"
     targetAmount = 1000000000000
 
     retCode, retMessage = polygon_deploy_contract(network, infuraKey, etherscanKey, ownerPK, tokenType, targetTokenName, targetSymbolName, targetAmount, logger, python_pgm)
