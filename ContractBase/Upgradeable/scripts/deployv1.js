@@ -3,16 +3,16 @@ const { verify } = require("../utils/verify");
 const { BigNumber } = ethers;
 
 async function main() {
-  const UpgradableV1 = await ethers.getContractFactory("testDeployLinux");
+  const UpgradableV1 = await ethers.getContractFactory("testGovernance");
 
 
-  console.log("Deploying testDeployLinux...");
+  console.log("Deploying testGovernance...");
   const contract = await upgrades.deployProxy(UpgradableV1, [], {
     initializer: "initialize",
     kind: "transparent",
   });
   await contract.deployed();
-  console.log("testDeployLinux deployed address to:", contract.address);
+  console.log("testGovernance deployed address to:", contract.address);
 }
 
 main();

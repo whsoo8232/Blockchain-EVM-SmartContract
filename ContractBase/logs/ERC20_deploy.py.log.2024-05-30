@@ -1,0 +1,22 @@
+[2024-05-30 13:04:21.339] [DEBUG   ] yarn run v1.22.22
+$ npx hardhat clean;rm -rf .env .openzeppelin cache contracts/* scripts/*
+Done in 0.95s.
+
+[2024-05-30 13:04:54.706] [DEBUG   ] yarn run v1.22.22
+$ npx hardhat run scripts/deployv1.js
+Compiled 20 Solidity files successfully (evm target: paris).
+Deploying TestAlpha...
+TestAlpha deployed address to: 0x82357Fb36B13E4a5e13FB4e292fCa01260cA7E7E
+Done in 33.10s.
+
+[2024-05-30 13:05:56.157] [DEBUG   ] yarn run v1.22.22
+$ npx hardhat clean;rm -rf .env .openzeppelin cache contracts/* scripts/*
+Done in 0.62s.
+
+[2024-05-30 13:06:34.050] [DEBUG   ] yarn run v1.22.22
+$ npx hardhat run scripts/deployv1.js
+Compiled 20 Solidity files successfully (evm target: paris).
+Deploying TestBeta...
+TestBeta deployed address to: 0xd0018302138E8fb982b44C7c008b9BC83A2C8d6a
+Done in 37.56s.
+

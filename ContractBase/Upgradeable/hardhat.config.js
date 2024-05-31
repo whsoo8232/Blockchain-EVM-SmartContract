@@ -32,7 +32,7 @@ module.exports = {
       accounts: [process.env.PRIVATE_KEY1],
     },
     amoy: {
-      url: `https://polygon-amoy.infura.io/v3/ce98e0c088a74995bc3fd43d52a81c39`,
+      url: `https://rpc-amoy.polygon.technology`,
       accounts: [process.env.PRIVATE_KEY1],
     },
     polygon: {

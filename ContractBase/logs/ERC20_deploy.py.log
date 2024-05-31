@@ -1,22 +1,11 @@
-[2024-05-29 16:34:13.282] [DEBUG   ] yarn run v1.22.21
+[2024-05-31 10:44:48.802] [DEBUG   ] yarn run v1.22.22
 $ npx hardhat clean;rm -rf .env .openzeppelin cache contracts/* scripts/*
+Done in 1.65s.
 
-Done in 0.79s.
-
-[2024-05-29 16:34:44.292] [DEBUG   ] yarn run v1.22.21
+[2024-05-31 10:45:22.851] [DEBUG   ] yarn run v1.22.22
 $ npx hardhat run scripts/deployv1.js
 Compiled 20 Solidity files successfully (evm target: paris).
-Deploying testDeployLinux...
-testDeployLinux deployed address to: 0x1CE9b36a3d5a445F4656e0d797789F8465a1528d
-Done in 30.91s.
-
-[2024-05-29 16:42:26.607] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
-
-[2024-05-29 16:42:26.608] [ERROR   ] ERC20_deploy.py failed 127  /bin/sh: 1: ./deployContract.sh: not found
-
-[2024-05-29 16:59:15.439] [DEBUG   ] yarn run v1.22.22
-$ npx hardhat clean;rm -rf .env .openzeppelin cache contracts/* scripts/*
-Need to install the following packages:
-hardhat@2.22.4
-Ok to proceed? (y) Done in 481.20s.
+Deploying testGovernance...
+testGovernance deployed address to: 0xBafBe8Dc6b88868A7b58F6E5df89c3054dec93bB
+Done in 33.78s.
 
