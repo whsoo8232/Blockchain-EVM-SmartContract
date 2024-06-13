@@ -1,15 +1,14 @@
-from web3 import Web3, HTTPProvider
-from web3.exceptions import TimeExhausted
 import os
-import time
-from Polygon_utils import *
 from dotenv import load_dotenv
+
+from Polygon_utils import *
+
 
 if __name__ == "__main__":
     ### common set ####
-    load_dotenv('./Management/.env')
+    load_dotenv('.env')
 
-    network = "sepolia"
+    network = "amoy"
     apikey = os.getenv("INFURA_API_KEY")
 
     account1 = os.getenv("MY_TESTMAIN")
@@ -17,28 +16,17 @@ if __name__ == "__main__":
     account2 = os.getenv("MY_TESTTEST")
     pk2 = os.getenv("MY_TESTTEST_PK")
 
-    tokenAddress = "0xc6608b41dC97f3c7B4A906974A4116AF96a4A119"
-    tokenAbi = "Management/ERC20/MyPoL/source/MyPoL.abi"
+    tokenAddress = "0xBafBe8Dc6b88868A7b58F6E5df89c3054dec93bB"
+    tokenAbi = "./token.abi"
 
     web3 = polygon_connect_web3(network, apikey)
 
-    myContract = polygon_get_contract(web3, tokenAddress, tokenAbi)
+    contract = polygon_get_contract(web3, tokenAddress, tokenAbi)
     
     
     ### scripts ###
-    polygon_tx_list2(web3)
-    #amt = 0.001
-    #lst,tx_receipt = polygon_eth_transfer(web3, account1, pk1, account2, amt)
-    #print(tx_receipt)
-    #count = 100
-    #while count:    
-    #    tx_dict = polygon_ethereum_txList(web3)
-    #    #print(tx_dict)
-    #    print("----------------------------------------------")
-    #    time.sleep(10)
-
-    #eth_balanace = polygon_eth_getbalance(web3, account1)
-    #print(eth_balanace)
-    #amt = 0.01
-    #gas, tx_receipt = polygon_eth_transfer(web3, account1, pk1, account2, amt)
-    #print(f"{gas}, {tx_receipt}")
+    addresses = ['0x2c18787A16E8Be7cF2cBCdC44AD97f616d1f7C0f','0x87460F55439594674891824dFF32ee5207d28A2f','0x8D17CA59aB97FAE4EDB200f11AA7E69f45d5Bae9','0x627e4495cB9CB339865157F38F2E9729ABaa5E12']
+    amts = [1000, 1000, 1500, 1000]
+    
+    polygon_token_multi_send(web3, contract, account1, pk1, addresses, amts)
+    

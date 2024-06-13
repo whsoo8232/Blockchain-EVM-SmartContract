@@ -602,6 +602,26 @@ def polygon_token_transferFrom(web3, mycontract, From, From_pk, To, value):
     return lst, tx_receipt
 
 
+def polygon_token_multi_send(web3, mycontract, From, From_pk, To_list, amt_list):
+    for i in range(len(amt_list)):
+        amt_list[i] =  amt_list[i] * 10**mycontract.functions.decimals().call()
+    
+    From_add = web3.to_checksum_address(From)
+    nonce = web3.eth.get_transaction_count(From_add)
+    gas_price = web3.eth.gas_price
+    tx = mycontract.functions.multisend(To_list,amt_list).build_transaction(
+        {
+            'from': From_add,
+            'nonce': nonce,
+            "gasPrice": gas_price
+        }
+    )
+    signed_txn = web3.eth.account.sign_transaction(tx, From_pk)
+    txHash = web3.eth.send_raw_transaction(signed_txn.rawTransaction)
+    tx_receipt = web3.eth.wait_for_transaction_receipt(txHash)
+    print(tx_receipt)
+
+
 def polygon_verify_allowance(web3, mycontract, From, To):
      verify = mycontract.functions.allowance(From,To).call()
      
