@@ -95,7 +95,7 @@ def polygon_make_deployScript(deployScriptSamp, deployScript, targetTokenName):
 def polygon_deploy_contract(network, infuraKey, etherscanKey, ownerPK, tokenType, targetTokenName, targetSymbolName, targetAmount=None, logger=None, python_pgm=None):
     retCode = 0
     retMessage = ""
-
+    
     command_exec = subprocess.Popen(["./deployContract.sh clean1"], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     output, error = command_exec.communicate()
     command_exec.wait()

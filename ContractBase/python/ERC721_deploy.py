@@ -13,7 +13,7 @@ from deployContract import *
 
 #env
 from dotenv import load_dotenv
-load_dotenv('../Upgradeable/.env')
+load_dotenv('../../.env')
 
 if __name__ == "__main__":
     python_pgm = os.path.basename(sys.argv[0])
@@ -26,11 +26,11 @@ if __name__ == "__main__":
     infuraKey = os.getenv("INFURA_API_KEY")
     etherscanKey = ""
 
-    ownerPK = os.getenv("PRIVATE_KEY1")
-
+    ownerPK = os.getenv("MY_TESTMAIN_PK")
+    print(ownerPK)
     tokenType = "ERC721"
-    targetTokenName = "VideoNFT"
-    targetSymbolName = "VNFT"
+    targetTokenName = "awdawd"
+    targetSymbolName = "adw"
     targetAmount = None
 
     retCode, retMessage = polygon_deploy_contract(network, infuraKey, etherscanKey, ownerPK, tokenType, targetTokenName, targetSymbolName, targetAmount, logger)

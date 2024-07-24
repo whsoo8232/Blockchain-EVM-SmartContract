@@ -52,3 +52,55 @@ Deploying VideoNFT...
 VideoNFT deployed address to: 0x696AAb91d19b678611103C4c49Fb0088Fd487d14
 Done in 31.55s.
 
+[2024-07-08 16:19:31.460] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:19:31.461] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:21:28.904] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:21:28.905] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:23:49.262] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:23:49.263] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:24:38.593] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:24:38.594] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:27:37.526] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:27:37.527] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:30:18.516] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:30:18.517] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:30:51.077] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:30:51.078] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:31:15.312] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:31:15.313] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:31:45.778] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:31:45.779] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:32:05.125] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:32:05.126] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:33:32.879] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:33:32.880] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:37:37.583] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:37:37.584] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:41:23.553] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-08 16:41:23.554] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
