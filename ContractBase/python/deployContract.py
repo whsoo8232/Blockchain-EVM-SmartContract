@@ -27,7 +27,7 @@ def polygon_set_logger(python_pgm):
     logFormatter = logging.Formatter(fmt='[%(asctime)s.%(msecs)03d] [%(levelname)-8s] %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 
     # file handler settings
-    logHandler = logging.handlers.TimedRotatingFileHandler(filename=f'/home/whsoo8232/my-EVM-smartContract/ContractBase/logs/{python_pgm}.log', when='midnight', interval=1, encoding='utf-8')
+    logHandler = logging.handlers.TimedRotatingFileHandler(filename=f'/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/logs/{python_pgm}.log', when='midnight', interval=1, encoding='utf-8')
     logHandler.setFormatter(logFormatter)
 
     #logger set
@@ -96,7 +96,7 @@ def polygon_deploy_contract(network, infuraKey, etherscanKey, ownerPK, tokenType
     retCode = 0
     retMessage = ""
     
-    command_exec = subprocess.Popen(["./deployContract.sh clean1"], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    command_exec = subprocess.Popen(["cd ../Upgradeable;npx hardhat clean;rm -rf .env .openzeppelin cache contracts/* scripts/*"], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     output, error = command_exec.communicate()
     command_exec.wait()
 
@@ -128,7 +128,7 @@ def polygon_deploy_contract(network, infuraKey, etherscanKey, ownerPK, tokenType
         retCode = -1
         retMessage = f"tokenType({tokenType}), tokenName({targetTokenName}), symbol({targetSymbolName}), amount({targetAmount}) is invalid."
         return retCode, retMessage
-
+    
     polygon_write_contractSource(targetToken, contract_source_code)
 
     polygon_write_dotEnv(envFile, infuraKey, etherscanKey, ownerPK)
@@ -138,7 +138,8 @@ def polygon_deploy_contract(network, infuraKey, etherscanKey, ownerPK, tokenType
 
     polygon_make_deployScript(deployScriptSamp, deployScript, targetTokenName)
 
-    command_exec = subprocess.Popen(["./deployContract.sh deploy1"], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
+    command_exec = subprocess.Popen(["cd ../Upgradeable;npx hardhat run scripts/deployv1.js"], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     output, error = command_exec.communicate()
     command_exec.wait()
 
@@ -150,7 +151,7 @@ def polygon_deploy_contract(network, infuraKey, etherscanKey, ownerPK, tokenType
         logger.error("%s failed %d %s %s" % (python_pgm, command_exec.returncode, output, error))
         retMessage = error
         return retCode, retMessage
-
+    
     contractAddress = ""
     lines = output.split("\n")
     for line in lines:
@@ -176,6 +177,9 @@ def polygon_deploy_contract(network, infuraKey, etherscanKey, ownerPK, tokenType
 
     backupContractFile = "../Upgradeable/backup/" + datetime.now().strftime("%Y_%m_%d") + "/" + network + "/" + targetTokenName + ".addr"
     polygon_write_contractSource(backupContractFile, contractAddress)
+    
+    backupContractFile = "../Upgradeable/backup/" + datetime.now().strftime("%Y_%m_%d") + "/" + network + "/" + targetTokenName + ".json"
+    subprocess.run(['cp ../Upgradeable/.openzeppelin/* ' + backupContractFile], shell=True)
 
     retMessage = targetTokenName + " deployed at " + contractAddress
 

@@ -29,6 +29,8 @@ contract ERC721TokenName is Initializable, ERC721Upgradeable, ERC721URIStorageUp
         __Ownable_init(); 
     } 
 
+    event Mint(address to, uint256 tokenId, string tokenUri);
+
     /**
      * @dev Sets the status of minter.
      */
@@ -73,8 +75,9 @@ contract ERC721TokenName is Initializable, ERC721Upgradeable, ERC721URIStorageUp
 
     function mint(address to, uint256 tokenId, string memory tokenUri) public onlyMinter { 
         _mint(to, tokenId);
-	_setTokenURI(tokenId, tokenUri);
+	    _setTokenURI(tokenId, tokenUri);
         supplyCounter.increment();
+        emit Mint(to, tokenId, tokenUri);
     } 
     
     function multimint (address[] memory dests,uint256[] memory tokenIds, string[] memory tokenURIs) public onlyMinter returns (uint256) {

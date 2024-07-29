@@ -9,7 +9,7 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol"; 
 import "@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol";
 
-contract awdawd is Initializable, ERC721Upgradeable, ERC721URIStorageUpgradeable, OwnableUpgradeable, PausableUpgradeable, ERC721BurnableUpgradeable { 
+contract testV1 is Initializable, ERC721Upgradeable, ERC721URIStorageUpgradeable, OwnableUpgradeable, PausableUpgradeable, ERC721BurnableUpgradeable { 
     using CountersUpgradeable for CountersUpgradeable.Counter;
     CountersUpgradeable.Counter private supplyCounter;
 
@@ -22,12 +22,14 @@ contract awdawd is Initializable, ERC721Upgradeable, ERC721URIStorageUpgradeable
     }
 
     function initialize() public initializer { 
-        __ERC721_init("awdawd", "adw"); 
+        __ERC721_init("testV1", "TVA"); 
         __ERC721URIStorage_init(); 
         __Pausable_init();
         __ERC721Burnable_init();
         __Ownable_init(); 
     } 
+
+    event Mint(address to, uint256 tokenId, string tokenUri);
 
     /**
      * @dev Sets the status of minter.
@@ -73,8 +75,9 @@ contract awdawd is Initializable, ERC721Upgradeable, ERC721URIStorageUpgradeable
 
     function mint(address to, uint256 tokenId, string memory tokenUri) public onlyMinter { 
         _mint(to, tokenId);
-	_setTokenURI(tokenId, tokenUri);
+	    _setTokenURI(tokenId, tokenUri);
         supplyCounter.increment();
+        emit Mint(to, tokenId, tokenUri);
     } 
     
     function multimint (address[] memory dests,uint256[] memory tokenIds, string[] memory tokenURIs) public onlyMinter returns (uint256) {

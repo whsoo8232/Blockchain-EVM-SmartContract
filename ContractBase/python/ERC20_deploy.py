@@ -21,7 +21,7 @@ if __name__ == "__main__":
     logger = polygon_set_logger(python_pgm)
     logger.setLevel(logging.DEBUG)
     
-    network = "amoy"
+    network = "sepolia"
 
     infuraKey = os.getenv("INFURA_API_KEY")
     etherscanKey = ""
@@ -30,8 +30,8 @@ if __name__ == "__main__":
 
 
     tokenType = "ERC20"
-    targetTokenName = "testGovernance"
-    targetSymbolName = "TGVN"
+    targetTokenName = "tARTC"
+    targetSymbolName = "tUSDT"
     targetAmount = 1000000000000
 
     retCode, retMessage = polygon_deploy_contract(network, infuraKey, etherscanKey, ownerPK, tokenType, targetTokenName, targetSymbolName, targetAmount, logger, python_pgm)

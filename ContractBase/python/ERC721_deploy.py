@@ -13,7 +13,7 @@ from deployContract import *
 
 #env
 from dotenv import load_dotenv
-load_dotenv('../../.env')
+load_dotenv('../Upgradeable/.env')
 
 if __name__ == "__main__":
     python_pgm = os.path.basename(sys.argv[0])
@@ -26,11 +26,10 @@ if __name__ == "__main__":
     infuraKey = os.getenv("INFURA_API_KEY")
     etherscanKey = ""
 
-    ownerPK = os.getenv("MY_TESTMAIN_PK")
-    print(ownerPK)
+    ownerPK = os.getenv("PRIVATE_KEY1")
     tokenType = "ERC721"
-    targetTokenName = "awdawd"
-    targetSymbolName = "adw"
+    targetTokenName = "testV1"
+    targetSymbolName = "TVA"
     targetAmount = None
 
     retCode, retMessage = polygon_deploy_contract(network, infuraKey, etherscanKey, ownerPK, tokenType, targetTokenName, targetSymbolName, targetAmount, logger)

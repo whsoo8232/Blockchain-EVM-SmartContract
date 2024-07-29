@@ -1,25 +1,20 @@
 {
   "manifestVersion": "3.2",
   "admin": {
-    "address": "0x26B0bAe87215F442a37B5B6929dFe87588863D74",
-    "txHash": "0x8b82ec3c2d29020eb129517b1b5ae46b0d7a2c3cbb687617a07a63257e5d1828"
+    "address": "0x42c0527F1d6d6a16e11883677403E107bFCddFbF",
+    "txHash": "0xbe7293c7bdaff6293c44e6059b140b7fcaa68ee36406cd3a0ecbddea8e630b97"
   },
   "proxies": [
     {
-      "address": "0x5D4BB6856b52525E0923e7515cb1a4D6cCd808f0",
-      "txHash": "0xb1c1a460c2f0e05a4b0ee1138394bd7219e1a168f0a9a1f13cebb5581d50dacb",
-      "kind": "transparent"
-    },
-    {
-      "address": "0xb0ffC64dc6c5fF5E248f2dA5949D27dd52e0FB3c",
-      "txHash": "0x4979f832d9f179220be39052a1e4667c50a3f7f555441695710c201f701b4b4c",
+      "address": "0x3243d41a717fA47c6D4259f32e1710abCF22cE43",
+      "txHash": "0xd6e1a208dc34d9def9d34cae81475c96756120ad944b1230aea97046edf2782d",
       "kind": "transparent"
     }
   ],
   "impls": {
-    "8973865e20ff627f4ff4c4398e44e8d561b33243ff1225bb88fdc3b3f5b321df": {
-      "address": "0x1255f35DD29f174Fd546704fD3904bD287B7dD0d",
-      "txHash": "0x75c542fae701cce6c26d1ff6f3b36fbf2e1186cdf7330fb63fb982b8ca69c152",
+    "fb5d2ab6b0f3746bfb9b221a3edae5a34fba0ba82abafb4ca74c5d1a256cfb1e": {
+      "address": "0x864094D9a10183bDD8f5CD4A1Ed9B1E36BdDDC6C",
+      "txHash": "0x4fe2456bcab7d52a0fc01b01fe24313309ff93fe891466849104aef65a3e1a89",
       "layout": {
         "solcVersion": "0.8.18",
         "storage": [
@@ -173,24 +168,24 @@
             "offset": 0,
             "slot": "351",
             "type": "t_struct(Counter)2186_storage",
-            "contract": "awdawd",
-            "src": "contracts/awdawd.sol:14"
+            "contract": "testV1",
+            "src": "contracts/testV1.sol:14"
           },
           {
             "label": "isMinter",
             "offset": 0,
             "slot": "352",
             "type": "t_mapping(t_address,t_bool)",
-            "contract": "awdawd",
-            "src": "contracts/awdawd.sol:16"
+            "contract": "testV1",
+            "src": "contracts/testV1.sol:16"
           },
           {
             "label": "isPauser",
             "offset": 0,
             "slot": "353",
             "type": "t_mapping(t_address,t_bool)",
-            "contract": "awdawd",
-            "src": "contracts/awdawd.sol:17"
+            "contract": "testV1",
+            "src": "contracts/testV1.sol:17"
           }
         ],
         "types": {

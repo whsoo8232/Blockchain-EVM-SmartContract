@@ -10,7 +10,7 @@ elif [ ${1} == "clean" ] ; then
 elif [ ${1} == "compile" ] ; then
 	yarn compile
 elif [ ${1} == "deploy1" ] ; then
-	npx hardhat run scripts/deployv1.js
+	yarn deploy1
 else
 	exit -1
 fi
