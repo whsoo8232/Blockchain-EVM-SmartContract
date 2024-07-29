@@ -21,7 +21,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  defaultNetwork: 'sepolia',
+  defaultNetwork: 'baseSepolia',
   networks: {
     sepolia: {
       url: `https://sepolia.infura.io/v3/${process.env.INFURA_API_KEY}`,
@@ -39,8 +39,8 @@ module.exports = {
       url: `https://polygon-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
       accounts: [process.env.PRIVATE_KEY1],
     },
-    baobap: {
-      url: process.env.BAOBAP_URL,
+    baseSepolia: {
+      url: 'https://sepolia.base.org',
       accounts: [process.env.PRIVATE_KEY1],
     },
   },

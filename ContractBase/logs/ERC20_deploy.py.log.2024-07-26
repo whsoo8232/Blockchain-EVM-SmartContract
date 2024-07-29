@@ -1,0 +1,98 @@
+[2024-07-26 16:20:58.857] [DEBUG   ] 
+[2024-07-26 16:21:09.040] [ERROR   ] ERC20_deploy.py failed 1 Compiled 20 Solidity files successfully (evm target: paris).
+Deploying tARTC...
+ 
+/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:269
+        const error: any = new Error(message);
+                           ^
+Error: insufficient funds for intrinsic transaction cost [ See: https://links.ethers.org/v5-errors-INSUFFICIENT_FUNDS ] (error={"name":"ProviderError","_stack":"ProviderError: insufficient funds for gas * price + value: balance 26757559432594150, tx cost 162291166467983532, overshot 135533607035389382\n    at HttpProvider.request (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:90:21)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at EthersProviderWrapper.send (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":-32000,"_isProviderError":true}, method="sendTransaction", transaction=undefined, code=INSUFFICIENT_FUNDS, version=providers/5.7.2)
+    at Logger.makeError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
+    at Logger.throwError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
+    at checkError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:98:16)
+    at /home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:265:24
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[2024-07-26 16:24:17.235] [DEBUG   ] 
+[2024-07-26 16:24:26.777] [ERROR   ] ERC20_deploy.py failed 1 Compiled 20 Solidity files successfully (evm target: paris).
+Deploying tARTC...
+ 
+/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:269
+        const error: any = new Error(message);
+                           ^
+Error: insufficient funds for intrinsic transaction cost [ See: https://links.ethers.org/v5-errors-INSUFFICIENT_FUNDS ] (error={"name":"ProviderError","_stack":"ProviderError: insufficient funds for gas * price + value: balance 26757559432594150, tx cost 152561480653461929, overshot 125803921220867779\n    at HttpProvider.request (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:90:21)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at EthersProviderWrapper.send (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":-32000,"_isProviderError":true}, method="sendTransaction", transaction=undefined, code=INSUFFICIENT_FUNDS, version=providers/5.7.2)
+    at Logger.makeError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
+    at Logger.throwError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
+    at checkError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:98:16)
+    at /home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:265:24
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[2024-07-26 16:29:20.636] [DEBUG   ] 
+[2024-07-26 16:29:30.202] [ERROR   ] ERC20_deploy.py failed 1 Compiled 20 Solidity files successfully (evm target: paris).
+Deploying tARTC...
+ 
+/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:269
+        const error: any = new Error(message);
+                           ^
+Error: insufficient funds for intrinsic transaction cost [ See: https://links.ethers.org/v5-errors-INSUFFICIENT_FUNDS ] (error={"name":"ProviderError","_stack":"ProviderError: insufficient funds for gas * price + value: balance 26757559432594150, tx cost 140570392400208855, overshot 113812832967614705\n    at HttpProvider.request (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:90:21)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at EthersProviderWrapper.send (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":-32000,"_isProviderError":true}, method="sendTransaction", transaction=undefined, code=INSUFFICIENT_FUNDS, version=providers/5.7.2)
+    at Logger.makeError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
+    at Logger.throwError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
+    at checkError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:98:16)
+    at /home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:265:24
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[2024-07-26 16:32:06.925] [DEBUG   ] 
+[2024-07-26 16:32:15.769] [ERROR   ] ERC20_deploy.py failed 1 Compiled 20 Solidity files successfully (evm target: paris).
+Deploying tARTC...
+ 
+/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:269
+        const error: any = new Error(message);
+                           ^
+Error: insufficient funds for intrinsic transaction cost [ See: https://links.ethers.org/v5-errors-INSUFFICIENT_FUNDS ] (error={"name":"ProviderError","_stack":"ProviderError: insufficient funds for gas * price + value: balance 26757559432594150, tx cost 179073852406368290, overshot 152316292973774140\n    at HttpProvider.request (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:90:21)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at EthersProviderWrapper.send (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":-32000,"_isProviderError":true}, method="sendTransaction", transaction=undefined, code=INSUFFICIENT_FUNDS, version=providers/5.7.2)
+    at Logger.makeError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
+    at Logger.throwError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
+    at checkError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:98:16)
+    at /home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:265:24
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[2024-07-26 16:40:54.458] [DEBUG   ] 
+[2024-07-26 16:41:03.023] [ERROR   ] ERC20_deploy.py failed 1 Compiled 20 Solidity files successfully (evm target: paris).
+Deploying tARTC...
+ 
+/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:269
+        const error: any = new Error(message);
+                           ^
+Error: insufficient funds for intrinsic transaction cost [ See: https://links.ethers.org/v5-errors-INSUFFICIENT_FUNDS ] (error={"name":"ProviderError","_stack":"ProviderError: insufficient funds for gas * price + value: balance 26757559432594150, tx cost 170261832071205210, overshot 143504272638611060\n    at HttpProvider.request (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:90:21)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at EthersProviderWrapper.send (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":-32000,"_isProviderError":true}, method="sendTransaction", transaction=undefined, code=INSUFFICIENT_FUNDS, version=providers/5.7.2)
+    at Logger.makeError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
+    at Logger.throwError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
+    at checkError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:98:16)
+    at /home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:265:24
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[2024-07-26 17:08:01.156] [DEBUG   ] 
+[2024-07-26 17:08:10.397] [ERROR   ] ERC20_deploy.py failed 1 Compiled 20 Solidity files successfully (evm target: paris).
+Deploying tARTC...
+ 
+/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:269
+        const error: any = new Error(message);
+                           ^
+Error: insufficient funds for intrinsic transaction cost [ See: https://links.ethers.org/v5-errors-INSUFFICIENT_FUNDS ] (error={"name":"ProviderError","_stack":"ProviderError: insufficient funds for gas * price + value: balance 26757559432594150, tx cost 155516298217240499, overshot 128758738784646349\n    at HttpProvider.request (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:90:21)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at EthersProviderWrapper.send (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":-32000,"_isProviderError":true}, method="sendTransaction", transaction=undefined, code=INSUFFICIENT_FUNDS, version=providers/5.7.2)
+    at Logger.makeError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
+    at Logger.throwError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
+    at checkError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:98:16)
+    at /home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:265:24
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[2024-07-26 17:27:27.347] [DEBUG   ] 
+[2024-07-26 17:27:36.219] [ERROR   ] ERC20_deploy.py failed 1 Compiled 20 Solidity files successfully (evm target: paris).
+Deploying tARTC...
+ 
+/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:269
+        const error: any = new Error(message);
+                           ^
+Error: insufficient funds for intrinsic transaction cost [ See: https://links.ethers.org/v5-errors-INSUFFICIENT_FUNDS ] (error={"name":"ProviderError","_stack":"ProviderError: insufficient funds for gas * price + value: balance 26757559432594150, tx cost 65855119652842576, overshot 39097560220248426\n    at HttpProvider.request (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:90:21)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at EthersProviderWrapper.send (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)","code":-32000,"_isProviderError":true}, method="sendTransaction", transaction=undefined, code=INSUFFICIENT_FUNDS, version=providers/5.7.2)
+    at Logger.makeError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
+    at Logger.throwError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
+    at checkError (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:98:16)
+    at /home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@ethersproject/providers/src.ts/json-rpc-provider.ts:265:24
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+

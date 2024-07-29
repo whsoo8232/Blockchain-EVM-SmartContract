@@ -4,7 +4,7 @@ import json
 import requests
 import sys, os
 sys.path.insert(1, '../../../')
-from Polygon_utils import *
+from EVM_utils import *
 from dotenv import load_dotenv
 
 

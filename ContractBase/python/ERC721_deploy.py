@@ -21,14 +21,14 @@ if __name__ == "__main__":
     logger = polygon_set_logger(python_pgm)
     logger.setLevel(logging.DEBUG)
 
-    network = "amoy"
+    network = "baseSepolia"
 
     infuraKey = os.getenv("INFURA_API_KEY")
     etherscanKey = ""
 
     ownerPK = os.getenv("PRIVATE_KEY1")
     tokenType = "ERC721"
-    targetTokenName = "testV1"
+    targetTokenName = "TestV1"
     targetSymbolName = "TVA"
     targetAmount = None
 

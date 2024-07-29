@@ -14,7 +14,7 @@ import struct
 # ERC721
 
 ### Common ###
-def polygon_connect_web3(connect_host, apikey): #test done
+def connect_web3(connect_host, apikey): #test done
     # Mainnet #
     if connect_host == 'ethereum':
         rpc_url = "https://mainnet.infura.io/v3/" + apikey
@@ -32,7 +32,7 @@ def polygon_connect_web3(connect_host, apikey): #test done
     return web3
 
 
-def polygon_get_contract(web3, contractAddress, contractAbi): #test done
+def get_contract(web3, contractAddress, contractAbi): #test done
     file = open(contractAbi, 'r', encoding='utf-8')
     contractaddress = web3.to_checksum_address(contractAddress)
     mycontract = web3.eth.contract(abi=file.read(), address=contractaddress)
@@ -40,7 +40,7 @@ def polygon_get_contract(web3, contractAddress, contractAbi): #test done
     return mycontract
 
 
-def polygon_gasPrice(priceType=None):
+def gasPrice(priceType=None):
     req = requests.get('https://api.polygonscan.com/api?module=gastracker&action=gasoracle&apikey=94GX5S8H6QIJVC2R9MX33V8AXMHC55DMXN')
     res = json.loads(req.content)
     if priceType == None:
@@ -57,14 +57,14 @@ def polygon_gasPrice(priceType=None):
         return res['result']['average']
 
 
-def polygon_eth_getbalance(web3, account): #test done
+def eth_getbalance(web3, account): #test done
     account = web3.to_checksum_address(account)
     balance = web3.from_wei(web3.eth.get_balance(account), 'ether')
 
     return balance
 
 
-def polygon_eth_transfer(web3, From, From_pk, To, value): #test done
+def eth_transfer(web3, From, From_pk, To, value): #test done
     From_add = web3.to_checksum_address(From)
     To_add = web3.to_checksum_address(To)
     nonce = web3.eth.get_transaction_count(From_add)
@@ -92,7 +92,7 @@ def polygon_eth_transfer(web3, From, From_pk, To, value): #test done
 
 #api docs from "https://docs.cloud.coinbase.com/sign-in-with-coinbase/docs/api-prices"##
 #coin&currency require SYMBOL
-def polygon_coin_spot_price(coin, currency):
+def coin_spot_price(coin, currency):
     from coinbase.wallet.client import Client
     api_key = "organizations/1d87c8de-839b-4ef5-b73a-d6dca9bc9988/apiKeys/23fe4062-96b9-438c-b14f-e4b088fa8417"
     api_secret = "-----BEGIN EC PRIVATE KEY-----\nMHcCAQEEINMjhjFpmI1H+BJ4Vrq51mwomQtiZuaVLOV9jrsmYA++oAoGCCqGSM49\nAwEHoUQDQgAE/erXjwh+7HVnEdL4RjHb3Au6iCORFxA3SqvJDG6EpDxFDEtqtUtr\nWxl2NmPUaFK10tuPb6gvodjDZswH5aJKBw==\n-----END EC PRIVATE KEY-----\n"
@@ -103,7 +103,7 @@ def polygon_coin_spot_price(coin, currency):
 
 
 #ethereum block generation delay : 12sec
-def polygon_tx_list(web3,address):
+def tx_list(web3,address):
     import pickle
     tx_dictionary = {}
     endBlock = web3.eth.block_number
@@ -123,7 +123,7 @@ def polygon_tx_list(web3,address):
     return tx_dictionary
 
 
-def polygon_tx_list2(web3):
+def tx_list2(web3):
     import pickle
     tx_dictionary = {}
     endBlock = web3.eth.block_number
@@ -143,7 +143,7 @@ def polygon_tx_list2(web3):
     #return tx_dictionary
 
 
-def polygon_wait_for_tx_receipt(web3, txHash):
+def wait_for_tx_receipt(web3, txHash):
     gnc_dict = {}
     retCnt = 0
     while True:
@@ -163,31 +163,31 @@ def polygon_wait_for_tx_receipt(web3, txHash):
 
 
 ### ERC721 ###
-def polygon_NFT_contractName(mycontract):
+def NFT_contractName(mycontract):
      name = mycontract.functions.name().call()
      
      return name
 
 
-def polygon_NFT_contractSymbol(mycontract):
+def NFT_contractSymbol(mycontract):
      symbol = mycontract.functions.name().call()
      
      return symbol
 
 
-def polygon_NFT_totalSuply(mycontract):
+def NFT_totalSuply(mycontract):
     total_token = mycontract.functions.totalSupply().call()
 
     return total_token
 
 
-def polygon_NFT_owner(mycontract, token_id):
+def NFT_owner(mycontract, token_id):
     token_owner = mycontract.functions.ownerOf(token_id).call()
 
     return token_owner
 
 
-def polygon_NFT_isOwner(web3, mycontract, account):
+def NFT_isOwner(web3, mycontract, account):
     confirm_account = web3.to_checksum_address(account)
     role = mycontract.functions.owner().call()
     owner_address = web3.to_checksum_address(role)
@@ -199,7 +199,7 @@ def polygon_NFT_isOwner(web3, mycontract, account):
     return value
 
 
-def polygon_NFT_change_ownership(web3, mycontract, From, From_pk, To):
+def NFT_change_ownership(web3, mycontract, From, From_pk, To):
     From_add = web3.to_checksum_address(From)
     To_add = web3.to_checksum_address(To)
     nonce = web3.eth.get_transaction_count(From_add)
@@ -225,14 +225,14 @@ def polygon_NFT_change_ownership(web3, mycontract, From, From_pk, To):
     return lst, tx_receipt
 
 
-def polygon_NFT_isMinter(web3, mycontract, account):
+def NFT_isMinter(web3, mycontract, account):
     confirm_account = web3.to_checksum_address(account)
     role = mycontract.functions.isMinter(confirm_account).call()
     
     return role
 
 
-def polygon_NFT_setMinter(web3, mycontract, From, From_pk, To, value=True):
+def NFT_setMinter(web3, mycontract, From, From_pk, To, value=True):
     From_add = web3.to_checksum_address(From)
     To_add = web3.to_checksum_address(To)
     nonce = web3.eth.get_transaction_count(From_add)
@@ -258,14 +258,14 @@ def polygon_NFT_setMinter(web3, mycontract, From, From_pk, To, value=True):
     return lst, tx_receipt
 
 
-def polygon_NFT_isPauser(web3, mycontract, account):
+def NFT_isPauser(web3, mycontract, account):
     confirm_account = web3.to_checksum_address(account)
     role = mycontract.functions.isPauser(confirm_account).call()
     
     return role
 
 
-def polygon_NFT_setPauser(web3, mycontract, From, From_pk, To, value=True):
+def NFT_setPauser(web3, mycontract, From, From_pk, To, value=True):
     From_add = web3.to_checksum_address(From)
     To_add = web3.to_checksum_address(To)
     nonce = web3.eth.get_transaction_count(From_add)
@@ -291,7 +291,7 @@ def polygon_NFT_setPauser(web3, mycontract, From, From_pk, To, value=True):
     return lst, tx_receipt
 
 
-def polygon_NFT_mint(web3, mycontract, From, From_pk, ipfsUri, token_id): #test done
+def NFT_mint(web3, mycontract, From, From_pk, ipfsUri, token_id): #test done
     From_add = web3.to_checksum_address(From)
     nonce = web3.eth.get_transaction_count(From_add)
     lst = []
@@ -316,10 +316,10 @@ def polygon_NFT_mint(web3, mycontract, From, From_pk, ipfsUri, token_id): #test 
     return lst, tx_receipt
 
 
-def polygon_NFT_airdrop_mint(web3, mycontract, From, From_pk, To, ipfsUri):
+def NFT_airdrop_mint(web3, mycontract, From, From_pk, To, ipfsUri):
     From_add = web3.to_checksum_address(From)
     To_add = web3.to_checksum_address(To)
-    token_id = polygon_NFT_totalSuply(web3, mycontract) + 1
+    token_id = NFT_totalSuply(web3, mycontract) + 1
     nonce = web3.eth.get_transaction_count(From_add)
     lst = []
     gas_estimate = mycontract.functions.mint(To_add, token_id, ipfsUri).estimate_gas({'from': From_add})
@@ -343,7 +343,7 @@ def polygon_NFT_airdrop_mint(web3, mycontract, From, From_pk, To, ipfsUri):
     return lst, tx_receipt
 
 
-def polygon_burn(web3, mycontract, From, From_pk, token_id):
+def burn(web3, mycontract, From, From_pk, token_id):
     From_add = web3.to_checksum_address(From)
     nonce = web3.eth.get_transaction_count(From_add)
     lst=[]
@@ -368,7 +368,7 @@ def polygon_burn(web3, mycontract, From, From_pk, token_id):
     return lst, tx_receipt
 
 
-def polygon_NFT_transferFrom(web3, mycontract, From, From_pk, To, token_id):
+def NFT_transferFrom(web3, mycontract, From, From_pk, To, token_id):
     From_add = web3.to_checksum_address(From)
     To_add = web3.to_checksum_address(To)
     nonce = web3.eth.get_transaction_count(From_add)
@@ -394,7 +394,7 @@ def polygon_NFT_transferFrom(web3, mycontract, From, From_pk, To, token_id):
     return lst, tx_receipt
 
 
-def polygon_NFT_list(web3, mycontract, startBlock, lastblock, token_id=None):
+def NFT_list(web3, mycontract, startBlock, lastblock, token_id=None):
     tx_list = []
     if token_id is None:
         myFilter = mycontract.events.Transfer.createFilter(fromBlock=startBlock)
@@ -412,38 +412,38 @@ def polygon_NFT_list(web3, mycontract, startBlock, lastblock, token_id=None):
 
 
 ### ERC20 ###
-def polygon_token_contractName(mycontract): #test done
+def token_contractName(mycontract): #test done
      name = mycontract.functions.name().call()
      
      return name
  
  
-def polygon_token_contractSymbol(mycontract): #test done
+def token_contractSymbol(mycontract): #test done
      symbol = mycontract.functions.name().call()
      
      return symbol
 
 
-def polygon_metic_get_balance(web3, account): #test done
+def metic_get_balance(web3, account): #test done
     account = web3.to_checksum_address(account)
     balance = web3.from_wei(web3.eth.get_balance(account), 'ether')
 	
     return balance
 
 
-def polygon_token_get_balance(mycontract, account): #test done
+def token_get_balance(mycontract, account): #test done
     token_balance = mycontract.functions.balanceOf(account).call()
     
     return token_balance
 
 
-def polygon_token_totalSuply(mycontract): #test done
+def token_totalSuply(mycontract): #test done
     total_token = mycontract.functions.totalSupply().call()
     
     return total_token
 
 
-def polygon_token_approve(web3, mycontract, From, From_pk, To, value):
+def token_approve(web3, mycontract, From, From_pk, To, value):
     From_add = web3.to_checksum_address(From)
     To_add = web3.to_checksum_address(To)
     nonce = web3.eth.get_transaction_count(From_add)
@@ -473,7 +473,7 @@ def polygon_token_approve(web3, mycontract, From, From_pk, To, value):
     return lst, tx_receipt
 
 
-def polygon_token_mint(web3, mycontract, owner, owner_pk, value): #test done
+def token_mint(web3, mycontract, owner, owner_pk, value): #test done
     owner_add = web3.to_checksum_address(owner)
     nonce = web3.eth.get_transaction_count(owner_add)
     amount = value * 10**mycontract.functions.decimals().call()
@@ -503,7 +503,7 @@ def polygon_token_mint(web3, mycontract, owner, owner_pk, value): #test done
     return lst, tx_receipt
 
 
-def polygon_token_airdrop_mint(web3, mycontract, From, From_pk, To, value):
+def token_airdrop_mint(web3, mycontract, From, From_pk, To, value):
     From_add = web3.to_checksum_address(From)
     To_add = web3.to_checksum_address(To)
     nonce = web3.eth.get_transaction_count(From_add)
@@ -538,7 +538,7 @@ def polygon_token_airdrop_mint(web3, mycontract, From, From_pk, To, value):
     return lst, tx_receipt
 
 
-def polygon_token_burn(web3, mycontract, owner, owner_pk, value):
+def token_burn(web3, mycontract, owner, owner_pk, value):
     owner_add = web3.to_checksum_address(owner)
     nonce = web3.eth.get_transaction_count(owner_add)
     amount = value * 10**mycontract.functions.decimals().call()
@@ -571,7 +571,7 @@ def polygon_token_burn(web3, mycontract, owner, owner_pk, value):
     return lst, tx_receipt
 
 
-def polygon_token_transferFrom(web3, mycontract, From, From_pk, To, value):
+def token_transferFrom(web3, mycontract, From, From_pk, To, value):
     From_add = web3.to_checksum_address(From)
     To_add = web3.to_checksum_address(To)
     amount = value * 10**mycontract.functions.decimals().call()
@@ -602,7 +602,7 @@ def polygon_token_transferFrom(web3, mycontract, From, From_pk, To, value):
     return lst, tx_receipt
 
 
-def polygon_token_multi_send(web3, mycontract, From, From_pk, To_list, amt_list):
+def token_multi_send(web3, mycontract, From, From_pk, To_list, amt_list):
     for i in range(len(amt_list)):
         amt_list[i] =  amt_list[i] * 10**mycontract.functions.decimals().call()
     
@@ -622,7 +622,7 @@ def polygon_token_multi_send(web3, mycontract, From, From_pk, To_list, amt_list)
     print(tx_receipt)
 
 
-def polygon_verify_allowance(web3, mycontract, From, To):
+def verify_allowance(web3, mycontract, From, To):
      verify = mycontract.functions.allowance(From,To).call()
      
      print(verify)
@@ -632,7 +632,7 @@ def to_32byte_hex(val):
   return Web3.to_hex(Web3.to_bytes(val).rjust(32, b'\0'))
 
 
-def polygon_permit_hash(web3, mycontract, token_add, From, From_pk, To, deadline, amount):
+def permit_hash(web3, mycontract, token_add, From, From_pk, To, deadline, amount):
     From_add = web3.to_checksum_address(From)
     To_add =  web3.to_checksum_address(To)
     nonce = mycontract.functions.nonces(From_add).call()
@@ -711,7 +711,7 @@ def polygon_permit_hash(web3, mycontract, token_add, From, From_pk, To, deadline
     return v,r,s
 
 
-def polygon_token_change_ownership(web3, mycontract, From, From_pk, To):
+def token_change_ownership(web3, mycontract, From, From_pk, To):
     From_add = web3.to_checksum_address(From)
     To_add = web3.to_checksum_address(To)
     nonce = web3.eth.get_transaction_count(From_add)
@@ -737,7 +737,7 @@ def polygon_token_change_ownership(web3, mycontract, From, From_pk, To):
     return lst, tx_receipt
 
 
-def polygon_token_tx_list(mycontract, address, startBlock, endBlock):
+def token_tx_list(mycontract, address, startBlock, endBlock):
     etherscanApi = "https://api.polygonscan.com/api?module=account&action=tokentx&contractaddress=" + str(mycontract.address) + "&address=" + str(address) + "&startblock=" + str(startBlock) + "&endblock=" + str(endBlock) + "&page=1&offset=5&sort=asc&apikey=BRB7ZWGGJWUGGY6YRP68RAU4NGPTVH1GB2"
     req = requests.get(etherscanApi)
     tx_list = req.json()

@@ -1,0 +1,100 @@
+[2024-07-25 10:11:44.871] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:36:55.102] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:36:55.103] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:42:19.350] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:42:19.351] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:42:33.958] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:42:33.959] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:42:50.247] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:42:50.248] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:43:11.586] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:43:11.587] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:43:41.649] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:43:41.650] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:43:55.863] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:43:55.865] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:47:01.597] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:47:01.598] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:47:27.889] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:47:27.891] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:49:35.772] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:49:35.774] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:51:55.576] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:51:55.577] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:53:44.221] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:53:44.222] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:58:20.936] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 10:58:35.611] [DEBUG   ] Deploying testV1...
+testV1 deployed address to: 0x78FcdE9F2BCe35a8EEBf7448900e67Df4D1dD52f
+
+[2024-07-25 11:00:26.944] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 11:00:41.897] [DEBUG   ] Deploying testV1...
+testV1 deployed address to: 0x95EfeA516DB722D6d9ad103C7E83387FD614B4b4
+
+[2024-07-25 11:01:12.269] [ERROR   ] None failed 127  /bin/sh: 1: ./deployContract.sh: not found
+
+[2024-07-25 11:01:27.311] [DEBUG   ] Deploying testV1...
+testV1 deployed address to: 0x405Ed097BC64CF6d6Fd7288FBFDd639A3CD137dC
+
+[2024-07-25 11:03:03.822] [DEBUG   ] 
+[2024-07-25 11:03:38.191] [DEBUG   ] Compiled 21 Solidity files successfully (evm target: paris).
+Deploying testV1...
+testV1 deployed address to: 0x278f1c4096E9b00Cd0c6c077979b253DB49e5dB1
+
+[2024-07-25 13:06:44.866] [DEBUG   ] 
+[2024-07-25 13:07:17.353] [DEBUG   ] Compiled 21 Solidity files successfully (evm target: paris).
+Deploying testV1...
+testV1 deployed address to: 0x4A01E5df712b54D42DA6ECC9C299f490de4aB9d7
+
+[2024-07-25 13:10:00.902] [DEBUG   ] 
+[2024-07-25 13:10:35.652] [DEBUG   ] Compiled 21 Solidity files successfully (evm target: paris).
+Deploying testV1...
+testV1 deployed address to: 0xbF6Dd14639EE0F6048745cEA3D1936eAE5904985
+
+[2024-07-25 13:13:58.294] [DEBUG   ] 
+[2024-07-25 13:14:32.300] [DEBUG   ] Compiled 21 Solidity files successfully (evm target: paris).
+Deploying testV1...
+testV1 deployed address to: 0x13d7014Dff1E892aEFDe4E2D3d4134A21c86FA35
+
+[2024-07-25 13:17:56.706] [DEBUG   ] 
+[2024-07-25 13:18:29.562] [DEBUG   ] Compiled 21 Solidity files successfully (evm target: paris).
+Deploying testV1...
+testV1 deployed address to: 0xF6859A18Ad798206680e8a610D4587523be6251D
+
+[2024-07-25 13:19:59.299] [DEBUG   ] 
+[2024-07-25 13:20:33.175] [DEBUG   ] Compiled 21 Solidity files successfully (evm target: paris).
+Deploying testV1...
+testV1 deployed address to: 0x92c044F2D6D730e2377F0c533C39Bec898dEd5D6
+
+[2024-07-25 13:22:23.577] [DEBUG   ] 
+[2024-07-25 13:22:59.022] [DEBUG   ] Compiled 21 Solidity files successfully (evm target: paris).
+Deploying testV1...
+testV1 deployed address to: 0x3243d41a717fA47c6D4259f32e1710abCF22cE43
+

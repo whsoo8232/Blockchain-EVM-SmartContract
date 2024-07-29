@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 
-from Polygon_utils import *
+from EVM_utils import *
 
 
 if __name__ == "__main__":
