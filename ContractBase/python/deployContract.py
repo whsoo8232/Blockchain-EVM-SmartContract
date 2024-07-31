@@ -50,11 +50,10 @@ def polygon_write_contractSource(contract_file, contract_source_code):
         file.write(contract_source_code)
 
 
-def polygon_write_dotEnv(envFile, infuraKey, etherscanKey, ownerPK):
+def polygon_write_dotEnv(envFile, rpcUrkKey, etherscanKey, ownerPK):
     f = open(envFile, 'w')
 
-    f.write(f"INFURA_API_KEY='{infuraKey}'\n")
-    f.write("BAOBAP_URL='https://api.baobab.klaytn.net:8651'\n")
+    f.write(f"RPC_URL_KEY='{rpcUrkKey}'\n")
     if etherscanKey == "":
         f.write("ETHERSCAN_API_KEY=\n")
     else:
@@ -92,7 +91,7 @@ def polygon_make_deployScript(deployScriptSamp, deployScript, targetTokenName):
     f.close()
 
 
-def polygon_deploy_contract(network, infuraKey, etherscanKey, ownerPK, tokenType, targetTokenName, targetSymbolName, targetAmount=None, logger=None, python_pgm=None):
+def polygon_deploy_contract(network, rpcApiKey, etherscanKey, ownerPK, tokenType, targetTokenName, targetSymbolName, targetAmount=None, logger=None, python_pgm=None):
     retCode = 0
     retMessage = ""
     
@@ -131,7 +130,7 @@ def polygon_deploy_contract(network, infuraKey, etherscanKey, ownerPK, tokenType
     
     polygon_write_contractSource(targetToken, contract_source_code)
 
-    polygon_write_dotEnv(envFile, infuraKey, etherscanKey, ownerPK)
+    polygon_write_dotEnv(envFile, rpcApiKey, etherscanKey, ownerPK)
 
     lines = polygon_read_hardhatConfig(hardhatConfigSamp)
     polygon_write_hardhatConfig(hardhatConfig, lines, network)
