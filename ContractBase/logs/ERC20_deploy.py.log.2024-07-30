@@ -1,0 +1,96 @@
+[2024-07-30 11:18:08.600] [DEBUG   ] 
+[2024-07-30 11:18:55.009] [DEBUG   ] 
+[2024-07-30 11:18:59.146] [ERROR   ] ERC20_deploy.py failed 1 Compiled 20 Solidity files successfully (evm target: paris).
+Deploying ARTC...
+ 
+/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/util/jsonrpc.ts:47
+    throw new HardhatError(ERRORS.NETWORK.INVALID_JSON_RESPONSE, {
+          ^
+HardhatError: HH110: Invalid JSON-RPC response received: invalid project id
+
+    at parseJsonResponse (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/util/jsonrpc.ts:47:11)
+    at HttpProvider._fetchJsonRpcResponse (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:220:31)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at HttpProvider.request (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:87:29)
+    at getChainId (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@openzeppelin/upgrades-core/src/provider.ts:46:14)
+    at Function.forNetwork (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@openzeppelin/upgrades-core/src/manifest.ts:116:21)
+    at Proxy.deployProxy (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@openzeppelin/hardhat-upgrades/src/deploy-proxy.ts:43:22)
+    at main (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/scripts/deployv1.js:10:20)
+
+[2024-07-30 11:23:26.516] [DEBUG   ] 
+[2024-07-30 11:23:30.915] [ERROR   ] ERC20_deploy.py failed 1 Compiled 20 Solidity files successfully (evm target: paris).
+Deploying ARTC...
+ 
+/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/util/jsonrpc.ts:47
+    throw new HardhatError(ERRORS.NETWORK.INVALID_JSON_RESPONSE, {
+          ^
+HardhatError: HH110: Invalid JSON-RPC response received: project id required in the url
+
+    at parseJsonResponse (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/util/jsonrpc.ts:47:11)
+    at HttpProvider._fetchJsonRpcResponse (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:220:31)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at HttpProvider.request (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:87:29)
+    at getChainId (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@openzeppelin/upgrades-core/src/provider.ts:46:14)
+    at Function.forNetwork (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@openzeppelin/upgrades-core/src/manifest.ts:116:21)
+    at Proxy.deployProxy (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@openzeppelin/hardhat-upgrades/src/deploy-proxy.ts:43:22)
+    at main (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/scripts/deployv1.js:10:20)
+
+[2024-07-30 11:24:57.678] [DEBUG   ] 
+[2024-07-30 11:25:02.264] [ERROR   ] ERC20_deploy.py failed 1 Compiled 20 Solidity files successfully (evm target: paris).
+Deploying ARTC...
+ 
+/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/util/jsonrpc.ts:47
+    throw new HardhatError(ERRORS.NETWORK.INVALID_JSON_RESPONSE, {
+          ^
+HardhatError: HH110: Invalid JSON-RPC response received: invalid project id
+
+    at parseJsonResponse (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/util/jsonrpc.ts:47:11)
+    at HttpProvider._fetchJsonRpcResponse (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:220:31)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at HttpProvider.request (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:87:29)
+    at getChainId (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@openzeppelin/upgrades-core/src/provider.ts:46:14)
+    at Function.forNetwork (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@openzeppelin/upgrades-core/src/manifest.ts:116:21)
+    at Proxy.deployProxy (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@openzeppelin/hardhat-upgrades/src/deploy-proxy.ts:43:22)
+    at main (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/scripts/deployv1.js:10:20)
+
+[2024-07-30 11:25:50.978] [DEBUG   ] 
+[2024-07-30 11:25:55.397] [ERROR   ] ERC20_deploy.py failed 1 Compiled 20 Solidity files successfully (evm target: paris).
+Deploying ARTC...
+ 
+/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/util/jsonrpc.ts:47
+    throw new HardhatError(ERRORS.NETWORK.INVALID_JSON_RESPONSE, {
+          ^
+HardhatError: HH110: Invalid JSON-RPC response received: invalid project id
+
+    at parseJsonResponse (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/util/jsonrpc.ts:47:11)
+    at HttpProvider._fetchJsonRpcResponse (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:220:31)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at HttpProvider.request (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:87:29)
+    at getChainId (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@openzeppelin/upgrades-core/src/provider.ts:46:14)
+    at Function.forNetwork (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@openzeppelin/upgrades-core/src/manifest.ts:116:21)
+    at Proxy.deployProxy (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@openzeppelin/hardhat-upgrades/src/deploy-proxy.ts:43:22)
+    at main (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/scripts/deployv1.js:10:20)
+
+[2024-07-30 11:26:47.651] [DEBUG   ] 
+[2024-07-30 11:26:51.919] [ERROR   ] ERC20_deploy.py failed 1 Compiled 20 Solidity files successfully (evm target: paris).
+Deploying ARTC...
+ 
+/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/util/jsonrpc.ts:47
+    throw new HardhatError(ERRORS.NETWORK.INVALID_JSON_RESPONSE, {
+          ^
+HardhatError: HH110: Invalid JSON-RPC response received: invalid project id
+
+    at parseJsonResponse (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/util/jsonrpc.ts:47:11)
+    at HttpProvider._fetchJsonRpcResponse (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:220:31)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at HttpProvider.request (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:87:29)
+    at getChainId (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@openzeppelin/upgrades-core/src/provider.ts:46:14)
+    at Function.forNetwork (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@openzeppelin/upgrades-core/src/manifest.ts:116:21)
+    at Proxy.deployProxy (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/node_modules/@openzeppelin/hardhat-upgrades/src/deploy-proxy.ts:43:22)
+    at main (/home/whsoo8232/Projects/MY/Blockchain/Blockchain-EVM-SmartContract/ContractBase/Upgradeable/scripts/deployv1.js:10:20)
+
+[2024-07-30 11:28:33.444] [DEBUG   ] 
+[2024-07-30 11:28:59.943] [DEBUG   ] Compiled 20 Solidity files successfully (evm target: paris).
+Deploying ARTC...
+ARTC deployed address to: 0x109b9Ed66AcEF53BEE27d274CcAD518A5b8ef338
+

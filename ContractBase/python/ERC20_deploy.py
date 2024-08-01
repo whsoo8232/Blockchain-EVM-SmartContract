@@ -30,9 +30,9 @@ if __name__ == "__main__":
 
 
     tokenType = "ERC20"
-    targetTokenName = "ARTC"
-    targetSymbolName = "ARTC"
-    targetAmount = 10000000000
+    targetTokenName = "TestContractUpgrade"
+    targetSymbolName = "TCU"
+    targetAmount = 1000
 
     retCode, retMessage = polygon_deploy_contract(network, rpcUrlKey, etherscanKey, ownerPK, tokenType, targetTokenName, targetSymbolName, targetAmount, logger, python_pgm)
     print(f"retCode=[{retCode}], retMessage=[{retMessage}]")

@@ -21,27 +21,27 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  defaultNetwork: 'localhost',
+  defaultNetwork: 'baseSepolia',
   networks: {
     sepolia: {
-      url: `https://sepolia.infura.io/v3/${process.env.RPC_URL_KEY}`,
-      accounts: [process.env.PRIVATE_KEY1],
+      url: `https://sepolia.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      accounts: [process.env.CONTRACT_OWNER_ADDR],
     },
     mainnet: {
-      url: `https://mainnet.infura.io/v3/${process.env.RPC_URL_KEY}`,
-      accounts: [process.env.PRIVATE_KEY1],
+      url: `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      accounts: [process.env.CONTRACT_OWNER_ADDR],
     },
     amoy: {
-      url: `https://polygon-amoy.infura.io/v3/${process.env.RPC_URL_KEY}`,
-      accounts: [process.env.PRIVATE_KEY1],
+      url: `https://polygon-amoy.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      accounts: [process.env.CONTRACT_OWNER_ADDR],
     },
     polygon: {
-      url: `https://polygon-mainnet.infura.io/v3/${process.env.RPC_URL_KEY}`,
-      accounts: [process.env.PRIVATE_KEY1],
+      url: `https://polygon-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      accounts: [process.env.CONTRACT_OWNER_ADDR],
     },
     baseSepolia: {
-      url: `https://misty-necessary-dust.base-sepolia.quiknode.pro/${process.env.RPC_URL_KEY}`,
-      accounts: [process.env.PRIVATE_KEY1],
+      url: `https://misty-necessary-dust.base-sepolia.quiknode.pro/${process.env.QUICKNODE_BASE_SEPOLIA_ENDPOINT_KEY}`,
+      accounts: [process.env.CONTRACT_OWNER_ADDR],
     },
   },
   etherscan: {

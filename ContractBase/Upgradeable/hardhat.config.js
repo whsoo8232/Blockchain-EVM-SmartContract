@@ -24,23 +24,23 @@ module.exports = {
   defaultNetwork: 'baseSepolia',
   networks: {
     sepolia: {
-      url: `https://sepolia.infura.io/v3/${process.env.ENDPOINT_API_KEY}`,
+      url: `https://sepolia.infura.io/v3/${process.env.RPC_URL_KEY}`,
       accounts: [process.env.PRIVATE_KEY1],
     },
     mainnet: {
-      url: `https://mainnet.infura.io/v3/${process.env.ENDPOINT_API_KEY}`,
+      url: `https://mainnet.infura.io/v3/${process.env.RPC_URL_KEY}`,
       accounts: [process.env.PRIVATE_KEY1],
     },
     amoy: {
-      url: `https://rpc-amoy.polygon.technology`,
+      url: `https://polygon-amoy.infura.io/v3/${process.env.RPC_URL_KEY}`,
       accounts: [process.env.PRIVATE_KEY1],
     },
     polygon: {
-      url: `https://polygon-mainnet.infura.io/v3/${process.env.ENDPOINT_API_KEY}`,
+      url: `https://polygon-mainnet.infura.io/v3/${process.env.RPC_URL_KEY}`,
       accounts: [process.env.PRIVATE_KEY1],
     },
     baseSepolia: {
-      url: `https://misty-necessary-dust.base-sepolia.quiknode.pro/${process.env.ENDPOINT_API_KEY}`,
+      url: `https://misty-necessary-dust.base-sepolia.quiknode.pro/${process.env.RPC_URL_KEY}`,
       accounts: [process.env.PRIVATE_KEY1],
     },
   },

@@ -8,20 +8,20 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/draft-ERC20PermitUpgradeable.sol";
 
-contract ARTC is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable, PausableUpgradeable, OwnableUpgradeable, ERC20PermitUpgradeable {
+contract TestContractUpgrade is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable, PausableUpgradeable, OwnableUpgradeable, ERC20PermitUpgradeable {
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
         _disableInitializers();
     }
 
     function initialize() initializer public {
-        __ERC20_init("ARTC", "ARTC");
+        __ERC20_init("TestContractUpgrade", "TCU");
         __ERC20Burnable_init();
         __Pausable_init();
         __Ownable_init();
-        __ERC20Permit_init("ARTC");
+        __ERC20Permit_init("TestContractUpgrade");
         transferOwnership(msg.sender);
-        mint(msg.sender, 10000000000 * 10**decimals());
+        mint(msg.sender, 1000 * 10**decimals());
     }
 
     function pause() public onlyOwner {
